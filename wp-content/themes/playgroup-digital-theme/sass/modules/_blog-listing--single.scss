@@ -1,0 +1,142 @@
+.blog-single {
+  //background: $white;
+}
+
+.blog-single--featured {
+  background-position: center !important;
+  background-size: cover !important;
+  padding-bottom: 40%;
+}
+
+
+.blog-single--heading {
+  padding-top: ($grid-gutter-width * 4);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+  }
+}
+
+.blog-single--heading h1 {
+  font-size: $font-size-base;
+  margin: 0;
+
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+
+  }
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+  }
+}
+
+
+.blog-single--meta  {
+
+  padding-top:($grid-gutter-width * 2);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 2);
+
+  }
+}
+.blog-single--meta p {
+  font-size: $font-size-small;
+  color: $gray-light;
+  margin-bottom: ($grid-gutter-width /2);
+  float: left;
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-base;
+  float: none;
+  }
+}
+
+.blog-single--meta p+p {
+float: right;
+@media screen and (min-width: $screen-sm-min) {
+  float: none;
+  }
+}
+
+.blog-single--meta a {
+  @include link-underline-base($brand-primary , $white);
+  @include link-underline-position($font-size-small);
+}
+
+
+.blog-single--content {
+ padding-top: ($grid-gutter-width * 1);
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+
+
+
+.blog-single--content h4 {
+  font-family:$font-family-sans-serif-demi;
+  font-size: $font-size-base;
+  color: $gray-dark;
+}
+
+.blog-single--content img {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+
+  @media screen and (min-width: $screen-sm-min) {
+  }
+}
+
+.blog-single--content p+h4 {
+  padding-top: ($grid-gutter-width * 3);
+}
+
+.blog-single--content blockquote {
+}
+
+.blog-single--nav {
+  @media screen and (min-width: $screen-sm-min) {
+   // margin-bottom: ($grid-gutter-width * 3);
+  }
+}
+
+
+.blog-single--navigation {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom:($grid-gutter-width * 6);
+
+  }
+}
+
+
+
+.blog-single--content p a{
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+  color: $gray;
+}
+
+.blog-single--navigation a, .blog-single--author a {
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+}
+
+.blog-single--content blockquote a {
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($blockquote-font-size);
+
+}
+
+
+
+
+
+
+
+
+

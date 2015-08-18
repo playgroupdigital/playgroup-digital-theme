@@ -1,0 +1,101 @@
+.work-block--home{
+  //background: $white;
+  padding-bottom: $grid-gutter-width * 0;
+   transform: translateZ(0);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-bottom:($grid-gutter-width * 0.5);
+  }
+}
+.work-home--large {
+  background: $white;
+   transform: translateZ(0);
+  position: relative;
+  margin-bottom: $grid-gutter-width * 2;
+  @media screen and (min-width: $screen-sm-min) {
+  margin-bottom: $grid-gutter-width * 0;
+  }
+}
+
+
+
+.work-home h4 {
+  margin: 0 0 (ceil($grid-gutter-width/2)) 0;
+  font-size: $font-size-base;
+  color: $gray;
+  line-height: 1.333;
+  @media screen and (min-width: $screen-sm-min) {
+color: $white;
+  }
+}
+
+
+.work-home a:hover .project-block--link  {
+  @media screen and (min-width: $screen-sm-min) {
+    bottom: 2.5%;
+    opacity: 1;
+  }
+}
+
+
+.work-home--large--image {
+   transform: translateZ(0);
+    background-position: bottom !important;
+    background-size: cover !important;
+    padding-bottom: 60%;
+    @media screen and (min-width: $screen-sm-min) {
+    opacity: 1;
+    padding-bottom: 50%;
+    transition: all 0.25s ease-in-out;
+      transform: translateZ(0);
+  }
+  @media screen and (min-width: $screen-md-min) {
+  }
+}
+.work-home--large--text {
+   transform: translateZ(0);
+  transition: all 0.3s ease;
+  background:transparent;
+  @media screen and (min-width: $screen-sm-min) {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    color: $white
+  }
+}
+.work-home--large:hover .work-home--large--image{
+  @media screen and (min-width: $screen-sm-min) {
+  opacity: 0.25;
+
+}
+}
+
+
+.work-home--large:hover .work-home--large--text {
+  opacity: 1;
+}
+
+.work-home--large--text  h2{
+    color:  $gray-dark;
+    font-size: $font-size-base;
+    font-family: $font-family-sans-serif-demi;
+    margin: ($grid-gutter-width * 2) 0 ($grid-gutter-width * 1) 0;
+    @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+    color: $white;
+    }
+    @media screen and (min-width: $screen-md-min) {
+    //font-size: $font-size-h4;
+    color: $white;
+    }
+}
+
+.work-home--large--text h2 a {
+  @include link-underline-base($brand-primary , transparent);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+    color: $white;
+    @include link-underline-base(transparent , $white);
+    @include link-underline-position($font-size-h4);
+  }
+}

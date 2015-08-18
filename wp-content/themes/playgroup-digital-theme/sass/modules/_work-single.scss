@@ -1,0 +1,474 @@
+
+.work-single--heading {
+  padding-bottom: ($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-bottom: ($grid-gutter-width * 6)
+  }
+}
+
+.work-single--heading h1 {
+  font-size: $font-size-h4;
+  margin: 0;
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h2;
+
+  }
+  @media screen and (min-width: $screen-md-min) {
+    //font-size: $font-size-h1;
+  }
+}
+
+.work-single--meta  {
+  padding-top:($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 2);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  }
+}
+
+.work-single--meta p {
+    margin-bottom: 0px;
+}
+.work-single--meta p:first-child {
+  float: left;
+}
+
+.work-single--meta p+p {
+  float: right;
+}
+
+.work-single--meta a {
+  @include link-underline-base($brand-primary , $white);
+  @include link-underline-position($font-size-base);
+}
+
+
+.project-info {
+  background: $brand-grey;
+  padding-top:($grid-gutter-width * 4.5);
+  padding-bottom:($grid-gutter-width * 4.5);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+.project-info h4 {
+  color: $gray-light;
+  margin: 0;
+  padding-bottom:($grid-gutter-width * 1);
+  font-family: $font-family-sans-serif-demi;
+  font-size: $font-size-base;
+}
+.project-info p {
+  color: $white;
+  margin: 0;
+}
+.project-info--overview {
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-bottom:($grid-gutter-width * 3);
+  }
+}
+.project-info--services {
+  padding-bottom:($grid-gutter-width * 4.5);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+.project-info .project-info--btn {
+  padding: ($grid-gutter-width * 1.5);
+  transition: all 0.2s ease;
+  background: $brand-grey;
+  @media screen and (min-width: $screen-md-min) {
+    padding: ($grid-gutter-width * 2) ($grid-gutter-width * 3);
+  }
+}
+.project-info--btn:hover {
+  background: $brand-grey;
+}
+
+.project-info--btn span:after {
+  content: "→";
+  //font-family: $font-family-monospace;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  margin-left: -($grid-gutter-width);
+  opacity: 0;
+}
+.project-info--btn:hover span:after {
+  @media screen and (min-width: $screen-sm-min) {
+    margin-left: $grid-gutter-width;
+    opacity: 1;
+  }
+}
+
+.project-content {
+  //background: $white;
+  @media screen and (min-width: $screen-sm-min) {
+  margin-bottom:($grid-gutter-width * 3);
+  }
+}
+.project-content h4 {
+  font-family: $font-family-sans-serif-demi;
+  font-size: $font-size-base;
+}
+
+.project-content--block {
+  padding-top:($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+  position: relative;
+  //border: 1px solid red;
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+.project-content--block + .project-content--block{
+  padding-top:0;
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:0;
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+.project-content--block h4 {
+  color: $brand-grey;
+}
+
+.project-content--block p{
+}
+
+.project-content--block p a{
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+  color: $gray;
+
+}
+
+
+.project-content--block img {
+  @media screen and (min-width: $screen-sm-min) {
+  }
+}
+.project-content--block p+h4 {
+  padding-top: ($grid-gutter-width * 3);
+}
+
+.project-content--block p+img, .project-content--block img+p {
+  padding-top: ($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 4.5);
+  }
+}
+
+.project-content--block img+h4 {
+  padding-top: ($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 4.5);
+  }
+}
+.project-content--block h4+img {
+  padding-top: ($grid-gutter-width * 1);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 2);
+  }
+}
+
+
+
+
+.project-content--block.dark {
+  background: $brand-grey;
+  color: $white;
+  padding-top:($grid-gutter-width * 3);
+  margin-top: - ($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  margin-top:-($grid-gutter-width * 6);
+ }
+}
+.project-content--block.dark h4 {
+  color: $white;
+}
+
+.project-content--block.dark+.project-content--block{
+  padding-top:($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+  //border: 1px solid red;
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+.col-sm-7 + .col-sm-7 {
+  padding-top:($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+  //border: 1px solid red;
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top: 0;
+  padding-bottom: 0;
+  }
+}
+
+.project-content--block.banner {
+  color: $white;
+  font-family: $font-family-sans-serif-demi;
+  background: $dark-blue-grey;
+  padding-top:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  }
+}
+
+.project-content--block.banner h3{
+  font-size: $font-size-h4;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+  }
+  margin: 0;
+}
+
+.project-content--block.banner a{
+  color: $white;
+  @include link-underline-base($white, $brand-primary);
+  @include link-underline-position($font-size-h4);
+  @media screen and (min-width: $screen-md-min) {
+    @include link-underline-position($font-size-h3);
+  }
+}
+
+.project-content--block.banner a:after {
+    content: "→";
+  //font-family: $font-family-monospace;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  margin-left: -($grid-gutter-width * 3);
+  opacity: 0;
+}
+.project-content--block.banner a:hover:after {
+  @media screen and (min-width: $screen-sm-min) {
+    margin-left: ($grid-gutter-width);
+    opacity: 1;
+  }
+
+}
+
+
+
+
+
+.work-single {
+  //background: $white;
+}
+
+.work-single--featured {
+  background-position: center !important;
+  background-size: cover !important;
+  padding-bottom: 60%;
+  @media screen and (min-width: $screen-sm-min) {
+  padding-bottom: 40%;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+  padding-bottom: 35%;
+  }
+
+}
+
+
+.work-single--overview {
+    padding-top: ($grid-gutter-width * 4);
+    padding-bottom: ($grid-gutter-width * 4);
+    background: $dark-blue-grey;
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom: ($grid-gutter-width * 3);
+  }
+}
+.work-single--overview h1 {
+  display: inline-block;
+  font-size: $font-size-h4;
+  color: $white;
+  margin: 0;
+  font-family: $font-family-sans-serif-medium;
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+
+  }
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+  }
+}
+.work-single--overview h4 {
+  color: $white;
+  margin: 0;
+  padding-bottom:($grid-gutter-width * 1);
+  font-family: $font-family-sans-serif-demi;
+  font-size: $font-size-base;
+   @media screen and (max-width: $screen-sm-min) {
+    padding-top:($grid-gutter-width * 3);
+
+   }
+}
+
+.work-single--overview p {
+  color: $white;
+  padding-bottom: ($grid-gutter-width * 3);
+  float: left;
+  @media screen and (min-width: $screen-sm-min) {
+  float: none;
+  }
+}
+
+.work-single--project-info {
+     @media screen and (max-width: $screen-sm-min) {
+  border-bottom: 1px solid $gray-light-border;
+   }
+}
+
+.work-single--project-info p {
+  padding-bottom: ($grid-gutter-width * 0);
+}
+
+
+
+.work-single--overview-inverse {
+    padding-top: ($grid-gutter-width * 4);
+    padding-bottom: ($grid-gutter-width * 4);
+    background: $white;
+    border-bottom: 1px solid $gray-light-border;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom: ($grid-gutter-width * 3);
+  }
+}
+.work-single--overview-inverse h1 {
+  font-size: $font-size-h4;
+  color: $brand-primary;
+  margin: 0;
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+
+  }
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+  }
+}
+.work-single--overview-inverse h4 {
+  color: $gray-dark;
+  margin: 0;
+  padding-bottom:($grid-gutter-width * 1);
+  font-family: $font-family-sans-serif-demi;
+  font-size: $font-size-base;
+}
+.work-single--overview-inverse p {
+
+  padding-bottom: ($grid-gutter-width * 3);
+  float: left;
+  @media screen and (min-width: $screen-sm-min) {
+  float: none;
+  }
+}
+
+
+
+
+
+
+
+
+.work-single--content {
+ padding-top: ($grid-gutter-width * 1);
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+
+
+.work-single--content h4 {
+  font-family:$font-family-sans-serif-demi;
+  font-size: $font-size-base;
+  color: $gray-dark;
+}
+
+.work-single--content img {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+
+  @media screen and (min-width: $screen-sm-min) {
+  }
+}
+
+.work-single--content p+h4 {
+  padding-top: ($grid-gutter-width * 3);
+}
+
+.work-single--content blockquote {
+}
+
+.work-single--nav {
+  @media screen and (min-width: $screen-sm-min) {
+   // margin-bottom: ($grid-gutter-width * 3);
+  }
+}
+
+
+.work-single--navigation {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom:($grid-gutter-width * 6);
+
+  }
+}
+
+
+
+.work-single--content p a{
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+  color: $gray;
+}
+
+.work-single--navigation a, .blog-single--author a {
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+}
+
+.work-single--content blockquote a {
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($blockquote-font-size);
+
+}
+
+
+.img-half {
+  width: 50%;
+  float: left;
+}
+
+.img-third {
+  width: 33%;
+  float: left;
+}
+
+.img-quarter {
+  width: 25%;
+  float: left;
+}
+
+
+
+
+
+

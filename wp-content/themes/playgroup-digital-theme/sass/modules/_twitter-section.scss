@@ -1,0 +1,60 @@
+.twitter-block-section {
+  //background: $white;
+  //background: #55acee;
+}
+
+.twitter-block-section--heading {
+  color:  $gray-dark;
+  padding-top: ($grid-gutter-width * 4.5);
+  padding-bottom: ($grid-gutter-width * 4.5);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 9);
+  }
+}
+
+.twitter-block-section--heading  h4{
+    margin-bottom: 0;
+}
+
+.twitter-block-section--heading h4:before {
+content: url('http://192.168.1.103/playgroup-digital-theme/wp-content/uploads/2015/08/twitter-icon.svg');
+display: block;
+width: 28px;
+margin-right: ($grid-gutter-width * 2);
+float: left;
+}
+
+.twitter-section {
+  //background: $white;
+  //background: #55acee;
+  padding-bottom: $grid-gutter-width *4.5;
+}
+
+.twitter-section--text {
+  padding-top: 0;
+  padding-bottom: ($grid-gutter-width * 2.5);
+  color: $gray-light;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: 0;
+    padding-bottom: ($grid-gutter-width * 4.5);
+  }
+}
+
+.twitter-section--text  p { margin-bottom: ($grid-gutter-width * 1.5); }
+.twitter-section--text  p+p {
+  color: $gray;
+  @media screen and (min-width: $screen-sm-min) {
+   font-size: $font-size-base*1.125;
+  }
+}
+
+.twitter-section  a {
+  @include link-underline-base($brand-primary , transparent);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+    @include link-underline-position($font-size-base*1.125);
+  }
+}
+
+.twitter-section-date {
+}

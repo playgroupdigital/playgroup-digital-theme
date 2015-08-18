@@ -1,0 +1,345 @@
+.container-fluid--contact {
+  background-color: $dark-blue-grey;
+  color: $white;
+  padding-top: ($grid-gutter-width * 4.5);
+  padding-bottom:($grid-gutter-width * 4.5);
+  //border-bottom: $gray-light-border 1px solid;
+  //border: 1px solid transparent;
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+.contact {
+  display: none;
+}
+.contact-row {
+position: relative;
+}
+
+.contact-row a {
+  @include link-underline-base($white , transparent);
+  @include link-underline-position($font-size-base);
+}
+
+.contact-header {
+  padding-bottom:($grid-gutter-width * 3);
+}
+
+.contact-text {
+  padding-bottom:($grid-gutter-width * 2);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-bottom:($grid-gutter-width * 0);
+}
+}
+
+.container-fluid--contact a {
+  color: $white;
+  display: inline-block;
+  font-family: $font-family-sans-serif-demi;
+  padding-bottom:$grid-gutter-width;
+}
+
+.container-fluid--contact a:after {
+  content: "";
+}
+
+
+
+//
+// Close icons
+// --------------------------------------------------
+.close-button {
+
+ @media screen and (min-width: $screen-sm-min) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+}
+
+.close {
+  float: left;
+  font-size: $font-size-h1;
+  font-family: $font-family-sans-serif-light;
+  font-weight: normal;
+  line-height: 1;
+  color: $white;
+  @include opacity(1);
+   @media screen and (min-width: $screen-sm-min) {
+    float: right;
+ }
+
+
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+    @include opacity(1);
+  }
+
+  // [converter] extracted button& to button.close
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+// See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+
+.container-fluid--home {
+  // /background: $brand-primary;
+}
+.container-header--border {
+  background-color: $white;
+    @media screen and (max-width: $screen-sm-min - 1px) {
+  border-bottom: $gray-lighter 1px solid;
+}
+}
+// Navbar Brand/project name
+
+.navbar-brand {
+  float: left;
+  padding: $navbar-padding-vertical 0px;
+  font-size: $font-size-large;
+  line-height: $line-height-computed;
+  height: $navbar-height;
+  transform: translateZ(0);
+
+
+
+
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  > img {
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+      width: 125px;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      margin-left: -$navbar-padding-horizontal;
+    }
+  }
+}
+
+.navbar-nav li:last-child a {
+  padding-right: 0px;
+}
+
+.navbar-nav > li {
+   opacity: 1.0;
+   transition: all 0.25s ease-in-out;
+   transform: translateZ(0);
+   font-family:$font-family-sans-serif-medium;
+}
+
+
+.navbar-inverse .navbar-collapse{
+   border-bottom: $gray-lighter 1px solid;
+  padding-bottom: $grid-gutter-width;
+  @media screen and (min-width: $screen-sm-min) {
+  border-bottom: none;
+  padding-bottom: 0;
+
+  }
+}
+
+// Navbar toggle
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: $navbar-padding-horizontal;
+  padding: 9px 0px;
+  @include navbar-vertical-align(34px);
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: $border-radius-base;
+
+
+  &:focus {
+    outline: 0;
+  }
+
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    display: none;
+  }
+}
+
+
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  .bottom-bar {
+    transform: rotate(0);
+  }
+}
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.25s ease-in-out;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+
+
+
+
+// Navbar work arrow
+.navbar-nav li:first-child a:after {
+  content: "↓";
+  font-weight: normal;
+  transition: all 0.25s ease-in-out;
+  opacity: 1;
+  position: relative;
+  top:0px;
+  @media screen and (min-width: $screen-sm-min) {
+    opacity: 0;
+    top:-10px;
+  }
+  margin-left: 5px;
+  margin-right: -5px;
+}
+
+.navbar-nav li:first-child:hover a:after {
+  content: "↓";
+  opacity: 1;
+  top:0px;
+}
+
+.navbar-default .navbar-nav li:first-child a:after {
+  content: " ";
+  font-weight: normal;
+  transition: all 0.25s ease-in-out;
+  opacity: 1;
+  position: relative;
+  top:0px;
+  @media screen and (min-width: $screen-sm-min) {
+    opacity: 0;
+    top:-10px;
+  }
+  margin-left: 5px;
+  margin-right: -5px;
+}
+
+.navbar-default  .navbar-nav li:first-child:hover a:after {
+  content: " ";
+  opacity: 1;
+  top:0px;
+}
+
+
+
+
+// Navbar hover inactive items
+.navbar-nav:hover > li {
+  opacity: 0.5;
+}
+
+.navbar-nav:hover > li:hover {
+  opacity: 1.0;
+}
+
+
+
+// Navabr mobile link padding
+
+@media screen and (max-width: $screen-sm - 1) {
+
+
+.nav {
+  > li {
+    > a {
+      padding: $nav-link-padding-small;
+  -webkit-backface-visibility: hidden;
+             }
+    }
+  }
+}
+
+
+
+
+
+@media (max-width: $grid-float-breakpoint) {
+.navbar-collapse {
+  overflow-x: visible;
+  padding-right: $navbar-padding-horizontal;
+  padding-left:  $navbar-padding-horizontal;
+  border-top: none;
+  box-shadow: none;
+  @include clearfix;
+  overflow-scrolling: touch;
+  border-top: 1px solid $gray-lighter;
+  border-bottom: 1px solid $gray-lighter;
+  &.in {
+    overflow-y: auto;
+  }
+}
+}
+
+
+
+
+
+

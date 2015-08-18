@@ -1,0 +1,118 @@
+.footer {
+  font-size: $font-size-base;
+   background: $brand-grey;
+}
+
+.footer-text {
+  color: $white;
+  padding-top: ($grid-gutter-width * 4.5);
+  padding-bottom:($grid-gutter-width * 4.5);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top: ($grid-gutter-width * 6);
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+.footer-text + .footer-text {
+  padding-top: ($grid-gutter-width * 0);
+  padding-bottom:($grid-gutter-width * 4.5);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top: ($grid-gutter-width * 0);
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+.footer-text a {
+  color: $white;
+  text-decoration: none;
+  @include link-underline-base($white, $brand-grey);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+  }
+}
+
+.footer-text address {
+  margin-bottom:0px;
+  padding-bottom: ($grid-gutter-width * 1.5 - 2px);
+}
+
+.mailchimp-form {
+  padding-top: ($grid-gutter-width * 4.5);
+  @media screen and (min-width: $screen-sm-min) {
+   padding-top: 0;
+  }
+
+}
+.mailchimp-form input {
+    border: 1px none;
+    background: $brand-grey;
+  }
+.mailchimp-form input.email, .mailchimp-form input.name  {
+  color: #dadada;
+  display: block;
+  float: left;
+  margin:0 ($grid-gutter-width *2) ($grid-gutter-width *2) 0 ;
+  padding-left: 0;
+  border-bottom: 1px solid #dadada;
+  width:100%;
+
+}
+
+.mailchimp-form input[type="submit"] {
+  background: $brand-grey;
+  display: block;
+  padding: 0;
+  color: $white;
+  text-align: left;
+  clear: both;
+  @include link-underline-base($white, $brand-grey);
+  @include link-underline-position($font-size-base+2);
+  @media screen and (min-width: $screen-sm-min) {
+
+  }
+}
+
+.mailchimp-form input[type="submit"]:hover {
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset;
+}
+textarea, input { outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+
+.footer-text--address {
+}
+
+.sub-footer {
+  //background: $white;
+  font-size: $font-size-base;
+}
+
+.sub-footer--logo {
+padding: ($grid-gutter-width * 4.5) $grid-gutter-width ($grid-gutter-width * 4.5) $grid-gutter-width;
+  @media screen and (min-width: $screen-sm-min) {
+    padding: ($grid-gutter-width * 6) $grid-gutter-width ($grid-gutter-width * 6) $grid-gutter-width;
+  }
+}
+
+.sub-footer--link {
+    padding: ($grid-gutter-width * 4.5) 0 ($grid-gutter-width * 4.5) 0;
+  @media screen and (min-width: $screen-sm-min) {
+    padding: ($grid-gutter-width * 6) 0 ($grid-gutter-width * 6) 0;
+  }
+}
+
+.sub-footer--link p{
+  margin-bottom: 0;
+}
+.sub-footer--link a{
+  color: $gray;
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+  }
+}

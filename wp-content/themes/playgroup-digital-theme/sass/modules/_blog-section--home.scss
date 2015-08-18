@@ -1,0 +1,124 @@
+.blog-home {
+  border-bottom: $border-bottom-divide $gray-lighter;
+  background: $dark-blue-grey;
+  background: url('http://192.168.1.103/playgroup-digital-theme/wp-content/uploads/2015/08//blog-banner.jpg');
+  background-position: right;
+  background-size: cover;
+   @media screen and (min-width: $screen-sm-min) {
+    background-position: middle ;
+
+   }
+}
+
+
+
+.blog-section {
+  padding-top: ($grid-gutter-width * 4.5);
+  padding-bottom: $grid-gutter-width * 3;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 9);
+    padding-bottom:($grid-gutter-width * 4.5);
+
+  }
+}
+
+.blog-section--heading {
+  color: $white;
+
+  padding-bottom:($grid-gutter-width * 1.5);
+  font-size: $font-size-h4;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 0);
+    padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+
+.blog-section--text {
+  padding-top: 0;
+  padding-bottom:($grid-gutter-width * 3);
+  color: $white;
+    transition: all 0.3s ease;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+
+.blog-section--text a {
+  color: $white;
+    transition: all 0.3s ease;
+}
+
+.blog-section--text a:hover {
+    @media screen and (min-width: $screen-sm-min) {
+  opacity: 0.5;
+}
+}
+
+.blog-section--text p {
+  margin-bottom:($grid-gutter-width * 1);
+  padding-top: $grid-gutter-width;
+   font-size: $font-size-base;
+   display: block;
+  @media screen and (min-width: $screen-sm-min) {
+ }
+}
+
+.blog-section--text p + h1 a{
+  display: inline-block;
+      padding-top:($grid-gutter-width * 3);
+}
+
+.blog-section--text p + p {
+   font-size: $font-size-small;
+}
+
+.blog-section--text h1 {
+  margin-bottom:  $grid-gutter-width ;
+  padding-bottom: 10px;
+  color:  $white;
+  display: inline;
+  font-size: $font-size-base;
+  @include link-underline-base($white , transparent);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+
+    font-size: $font-size-h4;
+    margin: 0 0 $grid-gutter-width * 2 0;
+    @include link-underline-position($font-size-h4);
+  }
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+    @include link-underline-position($font-size-h3);
+  }
+}
+
+.blog-section--text p a {
+  //@include link-underline-base($white , transparent);
+  //@include link-underline-position($font-size-base);
+  font-family: $font-family-sans-serif-demi;
+}
+
+
+
+.project-block--link h4:after {
+  content: "→";
+  font-weight: normal;
+  transition: all 0.3s ease;
+  margin-left: $grid-gutter-width;
+  opacity: 1;
+}
+.project-block a:hover h1:after {
+  @media screen and (min-width: $screen-sm-min) {
+    margin-left: ($grid-gutter-width * 3);
+  }
+}
+
+.blog-section h4 {
+  margin-bottom: $grid-gutter-width;
+  font-size: $font-size-base;
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+  }
+}
+
+

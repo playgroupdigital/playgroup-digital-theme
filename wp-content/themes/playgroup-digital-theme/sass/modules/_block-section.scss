@@ -1,0 +1,102 @@
+.block-section {
+  //background: $white;
+}
+
+
+
+.block-section--heading {
+  padding-top: ($grid-gutter-width * 4.5);
+  padding-bottom:($grid-gutter-width * 3);
+  font-size: $font-size-h4;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 9);
+    padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+
+.block-section--heading p {
+  margin-bottom: 0;
+  color: $gray-dark;
+  font-size: $font-size-base;
+  @media screen and (min-width: $screen-sm-min) {
+    // /font-size: $font-size-h4;
+  }
+}
+
+
+// Page Headers
+.page-section--heading {
+  padding-top: ($grid-gutter-width * 2);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top: ($grid-gutter-width * 6)
+  }
+}
+.page-section--meta  {
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 2);
+  padding-bottom:($grid-gutter-width * 6);
+  }
+}
+
+
+.page-section--heading h1 {
+  font-size: $font-size-h3;
+  color: $brand-primary;
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h1;
+    margin: 0;
+  }
+}
+
+.page-section--meta p{
+  margin-bottom: 0px;
+}
+
+.page-section--meta p:first-child {
+  float: left;
+}
+
+.page-section--meta p+p {
+  float: right;
+}
+
+.page-section--meta ul {
+  clear: both;
+  margin-bottom: 0;
+  @media screen and (min-width: $screen-sm-min) {
+    clear: none;
+  }
+}
+
+.page-section--meta li  {
+  display: inline-block;
+  padding-right: ($grid-gutter-width / 2);
+}
+
+.page-section--meta li:not(:last-child):after  {
+
+  content: '/';
+  padding-left: ($grid-gutter-width );
+
+}
+
+.page-section--meta a {
+  @include link-underline-base($brand-primary , $white);
+  @include link-underline-position($font-size-base);
+}
+
+
+.work-block--heading p:before {
+  display: block;
+  content: " ";
+  margin-top: -260px;
+  height: 260px;
+  visibility: hidden;
+  @media screen and (min-width: $screen-sm-min) {
+    margin-top: -($grid-gutter-width * 15);
+  height: ($grid-gutter-width * 15);
+
+  }
+}
+

@@ -1,0 +1,149 @@
+.work-block {
+  //background: $white;
+    padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+
+  padding-bottom:($grid-gutter-width * 12);
+  }
+}
+.work-page--meta  {
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 6);
+  padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+.work-page--meta p{
+  margin-bottom: 0px;
+}
+
+.work-page--meta p {
+  float: left;
+}
+
+.work-page--meta ul {
+  clear: both;
+  margin-bottom: 0;
+  @media screen and (min-width: $screen-sm-min) {
+    clear: none;
+  }
+}
+
+.work-page--meta li  {
+  display: inline-block;
+  padding-right: ($grid-gutter-width / 2);
+}
+
+.work-page--meta li:not(:last-child):after  {
+
+  content: '/';
+  padding-left: ($grid-gutter-width );
+
+}
+
+.work-page--meta a {
+  @include link-underline-base($brand-primary ,  transparent);
+  @include link-underline-position($font-size-base);
+}
+.work-item {
+  //background: $white;
+    margin: 0 0 ($grid-gutter-width * 3) 0;
+    position: relative;
+
+
+@media screen and (min-width: $screen-sm-min) {
+  margin: 0 0 ($grid-gutter-width * 1) 0;
+  }
+}
+
+.work-item--image {
+    background-position: bottom !important;
+    background-size: cover !important;
+    padding-bottom: 60%;
+    @media screen and (min-width: $screen-sm-min) {
+    opacity: 1;
+    transition: all 0.25s ease-in-out;
+      transform: translateZ(0);
+  }
+}
+
+//Make this inline for wordpress shenanigans
+.work-mask {
+}
+.work-item--text {
+  color: $white;
+  transition: all 0.3s ease;
+
+  @media screen and (min-width: $screen-sm-min) {
+  position: absolute;
+  opacity: 0;
+  left: 10%;
+  bottom:5%;
+}
+
+}
+.work-item:hover .work-item--image{
+  @media screen and (min-width: $screen-sm-min) {
+  opacity: 0.15;
+}
+}
+
+.work-item:hover .work-item--text{
+bottom:10%;
+opacity: 1;
+}
+
+.work-item--client {
+color: $white;
+position: absolute;
+left: 10%;
+top:12.5%
+}
+
+.work-item--text  h2{
+    color:  $gray-dark;
+    font-size: $font-size-base;
+    font-family: $font-family-sans-serif-demi;
+    margin: ($grid-gutter-width * 2) 0 ($grid-gutter-width * 1) 0;
+    @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+    color:  $white;
+  }
+}
+
+.work-item--text h2 a {
+  @include link-underline-base($brand-primary , $white);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+    color: $white;
+    @include link-underline-base($white , transparent);
+    @include link-underline-position($font-size-h4);
+  }
+}
+
+.work-item--text p {
+  font-size: $font-size-small;
+  color: $gray-light;
+  @media screen and (min-width: $screen-sm-min) {
+  color: $white;
+  font-size: $font-size-base;
+}
+}
+
+.work-item h4 {
+  margin: 0 0 (ceil($grid-gutter-width/2)) 0;
+  font-size: $font-size-base;
+  color: $gray;
+  line-height: 1.333;
+  @media screen and (min-width: $screen-sm-min) {
+
+  }
+}
+
+
+.work-item a:hover .project-block--link  {
+  @media screen and (min-width: $screen-sm-min) {
+    bottom: 2.5%;
+    opacity: 1;
+  }
+}

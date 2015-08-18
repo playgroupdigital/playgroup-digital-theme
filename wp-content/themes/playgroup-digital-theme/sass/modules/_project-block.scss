@@ -1,0 +1,152 @@
+.home-projects {
+  margin-bottom: ($grid-gutter-width * 3);
+}
+
+.project {
+  position: relative;
+  -webkit-backface-visibility: hidden;
+    overflow:hidden;
+}
+
+// Remove this styling for production. Background will be set inline with a custom field.
+.project-block {
+  background: $white;
+  @media screen and (min-width: $screen-sm-min) {
+    background: $brand-grey;
+  }
+}
+
+.home-project--image {
+    background-position: bottom !important;
+    background-size: cover !important;
+    padding-bottom: 60%;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-bottom: 50%;
+    opacity: 0.75;
+    transition: all 0.25s ease-in-out;
+  }
+}
+
+
+
+.project-block a:hover .home-project--image {
+  @media screen and (min-width: $screen-sm-min) {
+    opacity: 0.05;
+  }
+}
+
+.project-block--text {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom: ($grid-gutter-width * 3);
+  transition: all 0.3s ease;
+
+
+  @media screen and (min-width: $screen-sm-min) {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    z-index: 1;
+  }
+}
+
+.project-block a:hover .project-block--text  {
+  @media screen and (min-width: $screen-sm-min) {
+  //  top: 12.5%;
+  }
+}
+
+.project-block--text h1{
+  display: inline;
+  margin-top: 0;
+  font-family: $font-family-sans-serif-demi;
+  font-size: $font-size-base;
+  color: $text-color;
+  @include link-underline-base($brand-primary , $white);
+  @include link-underline-position($font-size-base);
+    @media screen and (min-width: $screen-sm-min) {
+    text-decoration: none;
+    background: none;
+    font-size: $font-size-h4;
+    color: $white;
+    @include link-underline-base($white , transparent);
+  @include link-underline-position($font-size-h4);
+    }
+    @media screen and (min-width: $screen-md-min) {
+      font-size: $font-size-h3;
+          @include link-underline-base($white , transparent);
+  @include link-underline-position($font-size-h3);
+
+    }
+}
+
+.project-block h4 {
+  margin: 0 0 (ceil($grid-gutter-width/2)) 0;
+  font-size: $font-size-base;
+  color: $gray;
+  line-height: 1.333;
+  @media screen and (min-width: $screen-sm-min) {
+    margin: 0 0 ($grid-gutter-width/2) 0;
+    color: $white;
+    //font-size: $font-size-h4;
+  }
+}
+.project-block--link {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom: ($grid-gutter-width * 3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  color: $white;
+
+
+
+
+  @media screen and (min-width: $screen-sm-min) {
+    position: absolute;
+    bottom: 0%;
+    z-index: 1;
+  }
+}
+
+
+.project-block a:hover .project-block--link  {
+  @media screen and (min-width: $screen-sm-min) {
+    bottom: 2.5%;
+    opacity: 1;
+  }
+}
+
+.colour-mask {
+  position: relative;
+   transition: all 0.3s ease;
+   opacity: 0;
+}
+
+.project-block a:hover .colour-mask{
+  opacity: 0.75;
+}
+
+.project-block--link h4:after {
+  content: "→";
+  font-weight: normal;
+  transition: all 0.3s ease;
+  margin-left: $grid-gutter-width;
+  opacity: 1;
+}
+.project-block a:hover h1:after {
+  @media screen and (min-width: $screen-sm-min) {
+    margin-left: ($grid-gutter-width * 3);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

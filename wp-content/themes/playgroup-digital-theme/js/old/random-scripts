@@ -1,0 +1,31 @@
+<script>
+  $(document).ready(function() {
+
+    //Hide stuffs
+
+    $('.category-list').hide();
+
+    // Contact expando/collapso
+
+    $('.category-list-toggle').click(function() {
+        $('.category-list').slideToggle(500);
+        return false;
+    });
+
+    // Contact close
+
+    $('.category-list a.category-list-close').click(function() {
+        $('.category-list').slideUp(500);
+        return false;
+    });
+    $('.category-list-toggle').click(function() {
+         $(".category-list-toggle").animate({ opacity: 0 }, 'slow');
+        return false;
+    });
+      $('.category-list-close').click(function() {
+         $(".category-list-toggle").animate({ opacity: 1 }, 'slow');
+        return false;
+    });
+
+});
+</script>

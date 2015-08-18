@@ -1,0 +1,68 @@
+/*
+Theme Name: Playgroup Digital Theme
+Theme URI: http://playgroupdigital.com
+Author: Dan Sly
+Author URI: http://dansly.com/
+Description: Playgroup Digital Agency Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: playgroup-digital-theme
+*/
+
+// Import Variables
+@import "base/variables";
+@import "base/mixins";
+
+// Import Bootstrap for Sass
+@import "vendor/bootstrap";
+
+// Import Grid Css
+@import "layout/grid";
+
+// Import Type Styles
+@import "base/typography";
+
+* {
+  backface-visibility: hidden;
+}
+html {
+  overflow-y: scroll;
+
+}
+body{
+  overflow-x: hidden;
+
+}
+
+.container {
+ background: $white;
+}
+
+.container-fluid > .container {
+ background: transparent;
+}
+
+.animate {
+    visibility: hidden;
+}
+// Import Module Styles
+@import "modules/header";
+@import "modules/header-home";
+@import "modules/block-section";
+@import "modules/project-block";
+@import "modules/work-home-grid";
+@import "modules/blog-section--home";
+@import "modules/twitter-section";
+@import "modules/footer";
+//@import "modules/blog-listing";
+@import "modules/blog-listing--single";
+@import "modules/blog-listing--scroll";
+@import "modules/work-listing";
+@import "modules/work-single";
+@import "modules/about";
+
+
+
+
+
