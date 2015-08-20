@@ -1,32 +1,57 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
- * @package Playgroup Digital Theme
- */
-
+* The template for displaying all single posts.
+*
+* @package Playgroup Digital Theme
+*/
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php
+$thumb_id = get_post_thumbnail_id();
+$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+$thumb_url = $thumb_url_array[0];
+?>
+<div class="container-fluid blog-single--featured" style="background: url('<?php echo $thumb_url ?>');"></div>
+<div class="container">
+	<div class="row blog-single">
+		<div class="col-xs-18 col-sm-6 blog-single--heading" >
+			<h1><?php the_title(); ?></h1>
+			<div class="blog-single--meta">
+				<p>Written by: <?php the_author_posts_link() ?></p>
+				<p>Category: <?php $categories = get_the_category();
+					if ( ! empty( $categories ) ) {
+					echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+				}?></p>
+				<p class="hidden-xs">Date: <a href="<?php echo get_day_link('', '', ''); ?>"><?php echo get_the_date(); ?></a></p>
+			</div>
+		</div>
+		<div class="col-xs-18 col-sm-10 col-sm-push-2 blog-single--content">
+			<?php the_content(); ?>
+		</div>
+		<?php endwhile; else : ?>
+		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+		<?php endif; wp_reset_query(); ?>
+	</div>
+</div>
 
-		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+<!-- Pagination -->
+<div class="container-fluid blog-navigation">
+	<div class="container">
+		<div class="row block-section ">
+			<div class="col-xs-9 blog-navigation--links link-left ">
+				<p>
+					<?php next_post_link('%link', 'Previous Post'); ?>
+				</p>
+			</div>
+			<div class="col-xs-9  blog-navigation--links link-right text-right">
+				<p>
+					<?php previous_post_link('%link', 'Next Post'); ?>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Pagination -->
 <?php get_footer(); ?>

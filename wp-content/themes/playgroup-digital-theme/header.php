@@ -22,7 +22,6 @@
 
 <body <?php body_class(); ?>>
 
-
     <div class="contact container-fluid  container-fluid--contact">
       <div class="container">
         <div class="row contact-row ">

@@ -4,6 +4,7 @@
 }
 
 .twitter-block-section--heading {
+  @include make-xs-column(18);
   color:  $gray-dark;
   padding-top: ($grid-gutter-width * 4.5);
   padding-bottom: ($grid-gutter-width * 4.5);
@@ -58,3 +59,74 @@ float: left;
 
 .twitter-section-date {
 }
+
+
+
+
+
+.tweeple {
+
+  padding-bottom: $grid-gutter-width *4.5;
+}
+
+.tweeple-inner {
+
+}
+
+.tweets {
+  padding-left: 0;
+list-style: none;
+  @include make-row();
+}
+
+.tweet {
+  @include make-xs-column(18);
+  @include make-sm-column(8);
+    padding-top: 0;
+  padding-bottom: ($grid-gutter-width * 2.5);
+  color: $gray-light;
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: 0;
+    padding-bottom: ($grid-gutter-width * 4.5);
+  }
+}
+
+.tweet+.tweet {
+  @include make-xs-column(18);
+  @include make-sm-column(8);
+  @include make-sm-column-offset(1);
+}
+
+.tweet-wrap {
+
+}
+
+
+
+.tweet-wrap  { margin-bottom: ($grid-gutter-width * 1.5); }
+.tweet-wrap  {
+  color: $gray-dark;
+  @media screen and (min-width: $screen-sm-min) {
+   font-size: $font-size-base*1.125;
+  }
+}
+
+.tweet-text {
+  padding-bottom: ($grid-gutter-width / 2);
+}
+.tweet-text  a {
+  @include link-underline-base($brand-primary , transparent);
+  @include link-underline-position($font-size-base);
+  @media screen and (min-width: $screen-sm-min) {
+    @include link-underline-position($font-size-base*1.125);
+  }
+}
+
+.tweet-meta, .tweet-meta a {
+    color: $gray-light;
+    font-size: $font-size-base;
+}
+
+
+
+

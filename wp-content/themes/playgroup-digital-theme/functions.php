@@ -139,6 +139,19 @@ function footer_address_init() {
   ) );
 }
 add_action( 'widgets_init', 'footer_address_init' );
+
+function twitter_init() {
+  register_sidebar( array(
+    'name'          => esc_html__( 'Twitter', 'playgroup-digital-theme' ),
+    'id'            => 'twitter-feed',
+    'description'   => '',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '',
+    'after_title'   => '',
+  ) );
+}
+add_action( 'widgets_init', 'twitter_init' );
 /**
  * Enqueue scripts and styles.
  */

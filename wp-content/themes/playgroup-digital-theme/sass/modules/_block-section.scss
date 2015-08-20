@@ -1,10 +1,11 @@
 .block-section {
   //background: $white;
+    @include make-row();
 }
 
 
 
-.block-section--heading {
+.block-section--heading, .work-block--heading {
   padding-top: ($grid-gutter-width * 4.5);
   padding-bottom:($grid-gutter-width * 3);
   font-size: $font-size-h4;
@@ -14,13 +15,17 @@
   }
 }
 
-.block-section--heading p {
+.block-section--heading p, .work-block--heading p {
   margin-bottom: 0;
   color: $gray-dark;
   font-size: $font-size-base;
   @media screen and (min-width: $screen-sm-min) {
     // /font-size: $font-size-h4;
   }
+}
+
+.work-block--heading {
+  @include make-xs-column(18);
 }
 
 

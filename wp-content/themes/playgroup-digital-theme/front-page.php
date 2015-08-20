@@ -17,10 +17,9 @@ get_header(); ?>
       <!-- /hero -->
     </div>
     <div class="container-fluid container-fluid--home white-home">
-      <div class="home-header--image" style="" ></div>
       <div class="container">
         <div class="row home-header">
-          <div class="col-xs-15 col-sm-14 col-md-11  home-header--text">
+          <div class="  home-header--text">
             <h1><?php the_field('home_hero_text'); ?></h1>
 
             <!--<a class="btn btn-primary home-btn" href="about.html" role="button"><span>Learn more about us</span></a>-->
@@ -31,8 +30,8 @@ get_header(); ?>
     <!-- /container -->
     <!-- Latest from the studio white block -->
     <div class="container">
-      <div class="row block-section ">
-        <div class="col-xs-18 block-section--heading work-block--heading">
+      <div class="block-section ">
+        <div class="work-block--heading">
           <p  id="work">Latest from the studio</p>
         </div>
       </div>
@@ -54,7 +53,7 @@ get_header(); ?>
           ?>
     <!-- Project -->
     <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-      <div class="work-home--large">
+      <div class="work-home">
         <a href="<?php the_permalink(); ?>">
           <div class="work-mask" style="background: <?php the_field('color'); ?>;">
           <?php
@@ -62,12 +61,12 @@ get_header(); ?>
             $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
             $thumb_url = $thumb_url_array[0];
           ?>
-            <div class="work-home--large--image" style="background: url('<?php echo $thumb_url ?>');">
+            <div class="work-home--image" style="background: url('<?php echo $thumb_url ?>');">
             </div>
           </div>
           <div class="container ">
-            <div class="row work-home--large--text">
-              <div class="col-xs-18 col-sm-18 ">
+            <div class="row work-home--text">
+              <div class="work-home--text--inner">
                 <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?> </a></h2>
                 <p class="work-home--tags"><?php the_field('services'); ?></p>
               </div>
@@ -87,8 +86,8 @@ get_header(); ?>
     <!-- Latest from the blog white block -->
     <section class="container-fluid blog-home">
       <div class="container  blog-section">
-        <div class="row">
-          <div class="col-xs-18 col-sm-9  blog-section--heading">
+        <div class="block-section">
+          <div class="blog-section--heading">
             <p>Latest from the blog</p>
           </div>
           <?php
@@ -99,21 +98,23 @@ get_header(); ?>
             );
           $query = new WP_Query( $args );
           ?>
-          <div class="col-xs-18 col-sm-9  blog-section--text">
-           <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+          <div class="blog-section--text">
+            <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div class="blog-section--text-content">
               <h1>
-                <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?> </a>
+              <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?> </a>
               </h1>
               <p>Posted on
                 <a href="<?php echo get_day_link('', '', ''); ?>"><?php echo get_the_date(); ?></a>
-              by
+                by
                 <?php the_author_posts_link() ?>
-              in
+                in
                 <?php $categories = get_the_category();
                 if ( ! empty( $categories ) ) {
                 echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
                 }?>
               </p>
+            </div>
               <?php endwhile; else : ?>
             <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
             <?php endif; wp_reset_postdata();?>
@@ -128,20 +129,11 @@ get_header(); ?>
     <!-- Twitter -->
     <div class="container">
       <div class="row twitter-block-section">
-        <div class="col-xs-18  twitter-block-section--heading">
+        <div class="twitter-block-section--heading">
           <h4>@PlaygroupIdeas</h4>
         </div>
       </div>
-      <div class="row twitter-section">
-        <div class="col-xs-16 col-sm-8 twitter-section--text">
-          <p>20 May 2015</p>
-          <p>Morbi fringilla convallis sapien, id pulvinar odio volutpat. Vivamus sagittis lacus vel augue laoreet rutrum faucibus. <a href="#">Test link style</a></p>
-        </div>
-        <div class="col-xs-16 col-sm-8 col-sm-offset-1  twitter-section--text">
-          <p>20 May 2015</p>
-          <p>Mercedem aut nummos unde unde extricat, amaras. Morbi odio eros, volutpat ut pharetra vitae, lobortis sed nibh.</p>
-        </div>
-      </div>
+      <?php dynamic_sidebar( 'twitter' ); ?>
     </div>
     <!-- /Twitter -->
     <!-- Footer -->
