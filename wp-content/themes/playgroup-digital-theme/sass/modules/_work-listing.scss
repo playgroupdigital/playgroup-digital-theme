@@ -1,8 +1,8 @@
 .work-block {
   //background: $white;
+  @extend .container;
     padding-bottom:($grid-gutter-width * 3);
   @media screen and (min-width: $screen-sm-min) {
-
   padding-bottom:($grid-gutter-width * 12);
   }
 }
@@ -46,7 +46,8 @@
   @include link-underline-position($font-size-base);
 }
 .work-item {
-  //background: $white;
+   @include make-xs-column(18);
+  @include make-sm-column(9);
     margin: 0 0 ($grid-gutter-width * 3) 0;
     position: relative;
 

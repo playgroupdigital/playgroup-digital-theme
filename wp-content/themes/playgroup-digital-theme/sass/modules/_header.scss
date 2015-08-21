@@ -1,4 +1,8 @@
-.container-fluid--contact {
+
+
+.contact {
+  display: none;
+    @extend .container-fluid;
   background-color: $dark-blue-grey;
   color: $white;
   padding-top: ($grid-gutter-width * 4.5);
@@ -12,11 +16,13 @@
   }
 }
 
-.contact {
-  display: none;
+.contact-container {
+  @extend .container;
 }
+
 .contact-row {
 position: relative;
+@include make-row();
 }
 
 .contact-row a {
@@ -26,16 +32,22 @@ position: relative;
 
 .contact-header {
   padding-bottom:($grid-gutter-width * 3);
+   @include make-xs-column(18);
 }
 
 .contact-text {
+  @include make-xs-column(18);
+  @include make-sm-column(5);
   padding-bottom:($grid-gutter-width * 2);
   @media screen and (min-width: $screen-sm-min) {
   padding-bottom:($grid-gutter-width * 0);
 }
 }
+.contact-text + .contact-text {
+  @include make-sm-column-offset(1);
+}
 
-.container-fluid--contact a {
+.contact a {
   color: $white;
   display: inline-block;
   font-family: $font-family-sans-serif-demi;
@@ -52,7 +64,7 @@ position: relative;
 // Close icons
 // --------------------------------------------------
 .close-button {
-
+@include make-xs-column(2);
  @media screen and (min-width: $screen-sm-min) {
     position: absolute;
     top: 50%;
@@ -100,16 +112,20 @@ button.close {
 }
 
 
-.container-fluid--home {
-  // /background: $brand-primary;
-}
-.container-header--border {
-  background-color: $white;
-    @media screen and (max-width: $screen-sm-min - 1px) {
-  border-bottom: $gray-lighter 1px solid;
-}
-}
+
 // Navbar Brand/project name
+.header-nav {
+  @extend .container;
+}
+
+.header-nav--row {
+  @include make-row();
+}
+
+
+.navbar {
+  @include make-xs-column(18);
+}
 
 .navbar-brand {
   float: left;

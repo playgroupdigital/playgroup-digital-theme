@@ -2,8 +2,8 @@
         <!-- Page Heading -->
 
     <div class="container">
-      <div class="row block-section">
-        <div class="col-xs-18 blog-frontpage--meta">
+      <div class="block-section">
+        <div class="blog-frontpage--meta">
 
          <p class="categories-p">Categories:&nbsp;&nbsp;</p>
                      <ul class="list-unstyled category-list">
@@ -20,7 +20,7 @@
 <div class="container blog-entry">
   <div class="row blog-entry--list clearfix">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div class="col-xs-18 col-sm-9  blog-entry--single">
+    <div class="blog-entry--single">
     <a href="<?php the_permalink(); ?>">
      <?php
             $thumb_id = get_post_thumbnail_id();
@@ -61,15 +61,15 @@
 
 
 <!-- Pagination -->
-    <div class="container-fluid blog-navigation">
+    <div class="blog-navigation">
       <div class="container">
-      <div class="row block-section ">
-        <div class="col-xs-9 blog-navigation--links link-left ">
+      <div class="block-section ">
+        <div class="blog-navigation--links link-left ">
           <p>
             <?php echo get_previous_posts_link( 'Previous Blog Entries'); ?>
           </p>
         </div>
-        <div class="col-xs-9  blog-navigation--links link-right text-right">
+        <div class="blog-navigation--links link-right text-right">
           <p>
             <?php echo get_next_posts_link( 'Next Blog Entries'); ?>
           </p>

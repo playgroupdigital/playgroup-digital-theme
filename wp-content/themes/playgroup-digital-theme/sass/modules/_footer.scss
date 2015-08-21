@@ -1,9 +1,15 @@
 .footer {
+  @extend .container-fluid;
   font-size: $font-size-base;
    background: $brand-grey;
 }
 
+.footer-container {
+  @extend .container;
+}
+
 .footer-text {
+  @include make-row();
   color: $white;
   padding-top: ($grid-gutter-width * 4.5);
   padding-bottom:($grid-gutter-width * 4.5);
@@ -31,11 +37,24 @@
   }
 }
 
-.footer-text address {
+.footer-text--address {
+
+   @include make-xs-column(18);
+    @include make-sm-column(4);
   margin-bottom:0px;
   padding-bottom: ($grid-gutter-width * 1.5 - 2px);
 }
 
+.footer-text--form {
+   @include make-xs-column(18);
+    @include make-sm-column(4);
+      @include make-sm-column-offset(5)
+}
+
+.footer-text--copyright {
+     @include make-xs-column(18);
+    @include make-sm-column(4);
+}
 .mailchimp-form {
   padding-top: ($grid-gutter-width * 4.5);
   @media screen and (min-width: $screen-sm-min) {
@@ -88,11 +107,12 @@ textarea, input { outline: none;
 }
 
 .sub-footer {
-  //background: $white;
+  @extend .container-fluid;
   font-size: $font-size-base;
 }
 
 .sub-footer--logo {
+  @include make-xs-column(18);
 padding: ($grid-gutter-width * 4.5) $grid-gutter-width ($grid-gutter-width * 4.5) $grid-gutter-width;
   @media screen and (min-width: $screen-sm-min) {
     padding: ($grid-gutter-width * 6) $grid-gutter-width ($grid-gutter-width * 6) $grid-gutter-width;

@@ -1,6 +1,6 @@
 <?php $my_query = new WP_Query('showposts=1'); ?>
 <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class( 'container-fluid blog-hero' ); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'blog-hero' ); ?>>
       <div class="blog-header-mask" style="background: <?php the_field('blog-colour'); ?>;">
         <?php
             $thumb_id = get_post_thumbnail_id();
@@ -10,8 +10,8 @@
       <div class="blog-header--image" style="background: url('<?php echo $thumb_url ?>');"></div>
       </div>
       <div class="container">
-      <div class="row blog-header">
-              <div class="col-xs-181 col-sm-10 blog-header--text">
+      <div class="blog-header">
+              <div class="blog-header--text">
                 <a href="<?php the_permalink(); ?>"><h1><?php echo get_the_title(); ?></h1></a>
                 <?php the_excerpt(); ?>
                 <p><a href="<?php the_permalink(); ?>">Read more</a></p>
@@ -25,8 +25,8 @@
         <!-- Page Heading -->
 
     <div class="container">
-      <div class="row block-section">
-        <div class="col-xs-18 blog-frontpage--meta">
+      <div class="block-section">
+        <div class="blog-frontpage--meta">
 
          <p class="categories-p">Categories:&nbsp;&nbsp;</p>
                      <ul class="list-unstyled category-list">
@@ -40,10 +40,10 @@
 
 
 
-<div class="container blog-entry">
-  <div class="row blog-entry--list clearfix">
+<div class="blog-entry">
+  <div class="blog-entry--list">
   <?php query_posts('posts_per_page=8&offset=1'); if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div <?php post_class( 'col-xs-18 col-sm-9  blog-entry--single' ); ?>>
+    <div <?php post_class( 'blog-entry--single' ); ?>>
      <a href="<?php the_permalink(); ?>">
      <?php
             $thumb_id = get_post_thumbnail_id();
@@ -84,15 +84,15 @@
 
 
 <!-- Pagination -->
-    <div class="container-fluid blog-navigation">
+    <div class="blog-navigation">
       <div class="container">
-      <div class="row block-section ">
-        <div class="col-xs-9 blog-navigation--links link-left ">
+      <div class="block-section">
+        <div class=" blog-navigation--links link-left ">
           <p>
             <?php echo get_previous_posts_link( 'Previous Blog Entries'); ?>
           </p>
         </div>
-        <div class="col-xs-9  blog-navigation--links link-right text-right">
+        <div class="blog-navigation--links link-right text-right">
           <p>
             <?php echo get_next_posts_link( 'Next Blog Entries'); ?>
           </p>

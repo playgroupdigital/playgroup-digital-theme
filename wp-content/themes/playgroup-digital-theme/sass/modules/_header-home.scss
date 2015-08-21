@@ -1,15 +1,10 @@
 .home-header {
-}
-.container-fluid--home {
-  padding: 0;
-  position: relative;
-      z-index: 10;
-  transform: translateZ(0);
-}
-.container-header {
-    //background: $white;
+    @extend .container;
 }
 
+.home-header--row {
+  @include make-row();
+}
 
 .home-header--image {
     background-position: center !important;

@@ -1,8 +1,9 @@
 .blog-single {
-  //background: $white;
+  @include make-row();
 }
 
 .blog-single--featured {
+  @extend .container-fluid;
   background-position: center !important;
   background-size: cover !important;
   padding-bottom: 40%;
@@ -10,6 +11,8 @@
 
 
 .blog-single--heading {
+  @include make-xs-column(18);
+  @include make-sm-column(6);
   padding-top: ($grid-gutter-width * 4);
   @media screen and (min-width: $screen-sm-min) {
     padding-top: ($grid-gutter-width * 6);
@@ -63,6 +66,9 @@ float: right;
 
 
 .blog-single--content {
+  @include make-xs-column(18);
+  @include make-sm-column(10);
+  @include make-sm-column-offset(2);
  padding-top: ($grid-gutter-width * 1);
   padding-bottom:($grid-gutter-width * 3);
   @media screen and (min-width: $screen-sm-min) {

@@ -1,14 +1,8 @@
-.work-block--home{
-  //background: $white;
-  padding-bottom: $grid-gutter-width * 0;
-   transform: translateZ(0);
-  @media screen and (min-width: $screen-sm-min) {
-    padding-bottom:($grid-gutter-width * 0.5);
-  }
-}
+
 .work-home {
+  @extend .container-fluid;
   background: $white;
-   transform: translateZ(0);
+  transform: translateZ(0);
   position: relative;
   margin-bottom: $grid-gutter-width * 2;
   @media screen and (min-width: $screen-sm-min) {
@@ -16,6 +10,9 @@
   }
 }
 
+.work-home--content {
+@extend .container;
+}
 
 .work-home--image {
    transform: translateZ(0);

@@ -9,12 +9,13 @@
 
 ?>
 
-<footer class="container-fluid footer">
-      <div class="container"><div class="row footer-text">
-        <div class="col-xs-18 col-sm-4 footer-text--address">
+<footer class="footer">
+      <div class="footer-container">
+        <div class="footer-text">
+        <div class=" footer-text--address">
           <?php dynamic_sidebar( 'footer-address' ); ?>
         </div>
-        <div class="col-xs-18 col-sm-8  col-sm-push-5 footer-text--address mailchimp-form">
+        <div class="footer-text--form mailchimp-form">
           <form action="//playgroup.us1.list-manage.com/subscribe/post?u=023203ff7770f58c466883713&amp;id=9eb90a74cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
               <p class="">Subscribe to our newsletter</p>
@@ -34,18 +35,18 @@
             </form>
           </div>
         </div>
-        <div class="row footer-text">
-          <div class="col-xs-18 col-sm-4 footer-text--copyright">
-            <p>©Playgroupdigital 2015 </p>
+        <div class="footer-text">
+          <div class="footer-text--copyright">
+            <p>&copy; Playgroupdigital 2015 </p>
           </div>
         </div>
       </div>
     </footer>
     <!-- /Footer -->
-    <div class="container-fluid sub-footer">
+    <div class="sub-footer">
       <div class="container">
         <div class="row ">
-          <div class="col-xs-18 sub-footer--logo sub-footer--link">
+          <div class="sub-footer--logo sub-footer--link">
             <img src="http://localhost/playgroup-digital-theme/wp-content/uploads/2015/08/playgroup-logo.svg" alt="" width="26" height="26">
             <p class="text-right pull-right">Part of <a href="http://playgroup.com">Playgroup</a></p>
           </div>

@@ -2,8 +2,6 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
- *
  * @package Playgroup Digital Theme
  */
 
@@ -22,22 +20,22 @@
 
 <body <?php body_class(); ?>>
 
-    <div class="contact container-fluid  container-fluid--contact">
-      <div class="container">
+    <div class="contact">
+      <div class="contact-container">
         <div class="row contact-row ">
-          <div class="col-xs-18 contact-header ">
+          <div class="contact-header ">
             <h4>Get in touch</h4>
           </div>
-          <div class="col-xs-18 col-sm-5 contact-text">
+          <div class="contact-text">
             <?php dynamic_sidebar( 'contact-col-one' ); ?>
           </div>
-          <div class="col-xs-18 col-sm-5 col-sm-offset-1  contact-text">
+          <div class=" contact-text">
             <?php dynamic_sidebar( 'contact-col-two' ); ?>
           </div>
-          <div class="col-xs-18 col-sm-5 col-sm-offset-1 contact-text">
+          <div class="contact-text">
             <?php dynamic_sidebar( 'contact-col-three' ); ?>
           </div>
-          <div class="col-xs-2 close-button">
+          <div class="close-button">
             <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
         </div>
@@ -47,9 +45,9 @@
 
 
  <!-- Navbar -->
-    <div class="container header-nav">
-      <div class="row">
-        <nav class="navbar navbar-default col-xs-18">
+    <div class="header-nav">
+      <div class="header-nav--row">
+        <nav class="navbar navbar-default">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>

@@ -218,9 +218,13 @@ function your_custom_menu_item ( $items, $args ) {
 }
 add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
 
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
+
 function bootstrap_responsive_images( $html ){
   $classes = 'img-responsive'; // separated by spaces, e.g. 'img image-link'
-
   // check if there are already classes assigned to the anchor
   if ( preg_match('/<img.*? class="/', $html) ) {
     $html = preg_replace('/(<img.*? class=".*?)(".*?\/>)/', '$1 ' . $classes . ' $2', $html);
@@ -233,11 +237,6 @@ function bootstrap_responsive_images( $html ){
 }
 add_filter( 'the_content','bootstrap_responsive_images',10 );
 add_filter( 'post_thumbnail_html', 'bootstrap_responsive_images', 10 );
-
-function filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
-add_filter('the_content', 'filter_ptags_on_images');
 
 /**
 * Allow SVG Upload

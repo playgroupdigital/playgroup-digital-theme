@@ -3,8 +3,8 @@
 get_header(); ?>
 <!-- Page Heading -->
 <div class="container">
-  <div class="row block-section">
-    <div class="col-xs-18 blog-frontpage--meta">
+  <div class="block-section">
+    <div class="blog-frontpage--meta">
       <p class="categories-p">Categories:&nbsp;&nbsp;</p>
       <ul class="list-unstyled category-list">
         <?php wp_list_categories('exclude=&title_li=' ); ?>
@@ -13,8 +13,8 @@ get_header(); ?>
   </div>
 </div>
 <!-- /Page Heading -->
-<div class="container work-block">
-  <div class="row clearfix">
+<div class="work-block">
+  <div class="block-section">
     <?php
     $num_posts = 6;
     $args = array(
@@ -24,7 +24,7 @@ get_header(); ?>
     $query = new WP_Query( $args );
     ?>
     <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-    <div class="col-xs-18 col-sm-9  work-item">
+    <div class="work-item">
       <a href="<?php the_permalink(); ?>">
         <div class="work-mask" style="background: <?php the_field('color'); ?>;">
           <?php
@@ -47,24 +47,7 @@ get_header(); ?>
     <?php endif; wp_reset_query(); ?>
   </div>
 </div>
-<!-- Pagination -->
-<div class="container-fluid blog-navigation">
-  <div class="container">
-    <div class="row block-section ">
-      <div class="col-xs-9 blog-navigation--links link-left ">
-        <p>
-          <?php echo get_previous_posts_link( 'Previous Blog Entries'); ?>
-        </p>
-      </div>
-      <div class="col-xs-9  blog-navigation--links link-right text-right">
-        <p>
-          <?php echo get_next_posts_link( 'Next Blog Entries'); ?>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /Pagination -->
+
 <!-- Footer -->
 <?php get_footer(); ?>
 <!-- Footer -->

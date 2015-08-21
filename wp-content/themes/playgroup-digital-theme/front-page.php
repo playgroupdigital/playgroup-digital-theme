@@ -15,22 +15,21 @@
 get_header(); ?>
 
       <!-- /hero -->
-    </div>
-    <div class="container-fluid container-fluid--home white-home">
-      <div class="container">
-        <div class="row home-header">
-          <div class="  home-header--text">
+
+      <div class="home-header">
+        <div class="home-header--row">
+          <div class="home-header--text">
             <h1><?php the_field('home_hero_text'); ?></h1>
 
             <!--<a class="btn btn-primary home-btn" href="about.html" role="button"><span>Learn more about us</span></a>-->
           </div>
         </div>
       </div>
-    </div>
+
     <!-- /container -->
     <!-- Latest from the studio white block -->
     <div class="container">
-      <div class="block-section ">
+      <div class="block-section">
         <div class="work-block--heading">
           <p  id="work">Latest from the studio</p>
         </div>
@@ -42,7 +41,7 @@ get_header(); ?>
 
 
     <!-- Project Block -->
-    <div class="container-fluid work-block--home">
+
      <?php
         $num_posts = 3;
           $args = array(
@@ -64,8 +63,8 @@ get_header(); ?>
             <div class="work-home--image" style="background: url('<?php echo $thumb_url ?>');">
             </div>
           </div>
-          <div class="container ">
-            <div class="row work-home--text">
+          <div class="work-home--content ">
+            <div class="work-home--text">
               <div class="work-home--text--inner">
                 <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?> </a></h2>
                 <p class="work-home--tags"><?php the_field('services'); ?></p>
@@ -76,7 +75,7 @@ get_header(); ?>
       </div>
       <?php endwhile; endif; wp_reset_postdata(); ?>
       <!-- /Project -->
-    </div>
+
     <!-- /Project Block -->
 
 
