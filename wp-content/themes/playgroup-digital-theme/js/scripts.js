@@ -1,5 +1,4 @@
 var $ = jQuery;
-
 $(document).ready(function() {
     //Hide
     $('.contact').hide();
@@ -17,4 +16,24 @@ $(document).ready(function() {
     $(".navbar-toggle").on("click", function() {
         $(this).toggleClass("active");
     });
+
+     svgeezy.init(false, 'png');
 });
+
+var bottom = $('.container').offset().top;
+    $(document).on("scroll", function(){
+    if
+      ($(document).scrollTop() > bottom){
+      $(".navbar").addClass("shrink");
+      $(".nav-wrap").addClass("nav-bg");
+      $(".header-nav").addClass("nav-bg");
+
+    }
+    else
+    {
+      $(".navbar").removeClass("shrink");
+      $(".nav-wrap").removeClass("nav-bg");
+      $(".header-nav").removeClass("nav-bg");
+
+    }
+  });

@@ -7,12 +7,19 @@
   color: $white;
   padding-top: ($grid-gutter-width * 4.5);
   padding-bottom:($grid-gutter-width * 4.5);
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+  margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+
   //border-bottom: $gray-light-border 1px solid;
   //border: 1px solid transparent;
 
   @media screen and (min-width: $screen-sm-min) {
     padding-top: ($grid-gutter-width * 6);
     padding-bottom:($grid-gutter-width * 6);
+    margin-left: -($grid-gutter-width * 3);
+    margin-right: -($grid-gutter-width * 3);
   }
 }
 
@@ -116,6 +123,11 @@ button.close {
 // Navbar Brand/project name
 .header-nav {
   @extend .container;
+    transition: all 0.5s ease;
+}
+
+.container-fluid  .header-nav {
+  background: $white;
 }
 
 .header-nav--row {
@@ -128,12 +140,18 @@ button.close {
 }
 
 .navbar-brand {
+  transition: all 0.5s ease;
   float: left;
   padding: $navbar-padding-vertical 0px;
   font-size: $font-size-large;
   line-height: $line-height-computed;
   height: $navbar-height;
   transform: translateZ(0);
+  background-image: url('http://192.168.1.103/playgroup-digital-theme/wp-content/uploads/2015/08/playgroup-digital-logo-b.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 150px;
 
 
 
@@ -354,6 +372,59 @@ button.close {
 }
 }
 
+.navbar-fixed{
+ @media screen and (min-width: $screen-sm-min) {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: $zindex-navbar-fixed;
+  }
+}
+
+.navbar {
+  transition: all 0.5s ease;
+}
+
+.navbar a{
+  transition: all 0.5s ease;
+}
+  @media screen and (min-width: $screen-sm-min) {
+.shrink {
+  display: block;
+  transition: all 0.5s ease;
+;
+
+}
+
+.nav-wrap {
+  transition: all 0.5s ease;
+}
+
+.nav-wrap.nav-bg{
+
+ background: $brand-primary !important;
+}
+.header-nav.nav-bg{
+  transition: all 0.5s ease;
+ background: $brand-primary !important;
+}
+
+.shrink a {
+  transition: all 0.5s ease;
+  padding-top: 25px !important;
+  padding-bottom: 0px !important;
+  color: $white !important;
+}
+
+.shrink .navbar-brand {
+  transition: width 0.5s ease;
+  width:100px;
+  transition: height 0.5s ease;
+  background-image: url('http://192.168.1.103/playgroup-digital-theme/wp-content/uploads/2015/08/playgroup-digital-logo.svg');
+  height: 70px;
+
+}
+}
 
 
 

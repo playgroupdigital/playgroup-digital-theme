@@ -56,9 +56,7 @@
 
 
 <?php wp_footer(); ?>
-<script type="text/javascript">
-   svgeezy.init(false, 'png');
-</script>
+
 
 
 

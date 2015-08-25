@@ -16,9 +16,11 @@
 <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
 <?php wp_head(); ?>
+<script src="//cdn.jsdelivr.net/g/jquery@1.11,jquery.midnight@1.0"></script>
 </head>
 
 <body <?php body_class(); ?>>
+<div class="container-fluid nav-wrap  navbar-fixed">
 
     <div class="contact">
       <div class="contact-container">
@@ -45,9 +47,9 @@
 
 
  <!-- Navbar -->
-    <div class="header-nav">
+<div class="header-nav">
       <div class="header-nav--row">
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default ">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -56,7 +58,7 @@
             <span class="icon-bar bottom-bar"></span>
             </button>
             <a class="navbar-brand" href="<?php echo site_url(); ?>">
-              <img src="http://192.168.1.103/playgroup-digital-theme/wp-content/uploads/2015/08/playgroup-digital-logo-b.svg" alt="">
+
             </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse navbar-right" >
@@ -71,6 +73,6 @@
             </div><!--/.nav-collapse -->
           </nav>
         </div>
-      </div>
+      </div></div>
       <!-- /Navbar -->
 

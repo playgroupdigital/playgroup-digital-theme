@@ -96,7 +96,8 @@ color: $gray-light;
 .blog-header--image {
     background-position: center !important;
     background-size: cover !important;
-    padding-bottom: 100%;
+    transition: all 0.5s ease-in-out;
+    padding-bottom: 60%;
     position: relative;
     opacity: 0.25;
    transform: translateZ(0);
@@ -104,11 +105,12 @@ color: $gray-light;
 
     transition: all 0.5s ease;
     opacity: 0.55;
-    padding-bottom: 40%;
+    padding-bottom: 50%;
     }
     @media screen and (min-width: $screen-lg-min) {
-
+    padding-bottom: 35%;
     }
+
 }
 
 .blog-hero:hover .blog-header--image {

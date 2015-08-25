@@ -1,10 +1,11 @@
 .work-single--featured {
   @extend .container-fluid;
+  transition: all 0.5s ease-in-out;
   background-position: center !important;
   background-size: cover !important;
   padding-bottom: 60%;
   @media screen and (min-width: $screen-sm-min) {
-  padding-bottom: 40%;
+  padding-bottom: 50%;
   }
   @media screen and (min-width: $screen-lg-min) {
   padding-bottom: 35%;
