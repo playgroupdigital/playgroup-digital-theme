@@ -1,0 +1,90 @@
+.page-wrap {
+  @media screen and (min-width: $screen-sm-min) {
+  margin-top: ($grid-gutter-width * 10);
+}
+}
+
+.page-row {
+  @include make-row();
+}
+
+
+
+.page--heading {
+  @include make-xs-column(18);
+  @include make-sm-column(6);
+  padding-top: ($grid-gutter-width * 4);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+  }
+}
+
+.page--heading h1 {
+  font-size: $font-size-base;
+  margin: 0;
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $font-size-h4;
+  }
+  @media screen and (min-width: $screen-md-min) {
+    font-size: $font-size-h3;
+  }
+}
+
+.page--content {
+  @include make-xs-column(18);
+  @include make-sm-column(10);
+  @include make-sm-column-offset(2);
+ padding-top: ($grid-gutter-width * 1);
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: ($grid-gutter-width * 6);
+    padding-bottom:($grid-gutter-width * 4.5);
+  }
+}
+
+
+
+.page--content h4 {
+  font-family:$font-family-sans-serif-demi;
+  font-size: $font-size-base;
+  color: $gray-dark;
+}
+
+.page--content img {
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+
+  @media screen and (min-width: $screen-sm-min) {
+  }
+}
+
+.page--content p+h4 {
+  padding-top: ($grid-gutter-width * 3);
+}
+
+.page--content blockquote {
+}
+
+
+.page--content p a{
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($font-size-base);
+  color: $gray;
+}
+
+
+
+.page--content blockquote a {
+  @include link-underline-base($brand-primary, $white);
+  @include link-underline-position($blockquote-font-size);
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,11 @@
 .home-header {
     @extend .container;
+    transition: all 0.5s ease-in-out;
 }
 
 .home-header--row {
   @include make-row();
+  transition: all 0.5s ease-in-out;
 }
 
 .home-header--image {
@@ -24,6 +26,7 @@
   @include make-xs-column(15);
   @include make-sm-column(14);
   @include make-sm-column(11);
+  transition: all 0.5s ease-in-out;
    padding-top: 20%;
    padding-top: 10vh;
    @media screen and (min-width: $screen-sm-min) {
@@ -39,6 +42,7 @@
     font-size: $font-size-h2;
     font-family: $font-family-sans-serif-medium;
     margin-bottom:  ($grid-gutter-width * 2);
+    letter-spacing: -1px;
 
     @media screen and (min-width: $screen-sm-min) {
         font-size: $font-size-h2 ;
@@ -47,6 +51,7 @@
     @media screen and (min-width: $screen-md-min) {
       font-size: $font-size-h1 ;
       margin-bottom:  0;
+
 
     }
 }

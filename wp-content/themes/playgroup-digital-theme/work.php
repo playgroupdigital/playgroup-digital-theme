@@ -2,7 +2,7 @@
 /* Template Name: Work */
 get_header(); ?>
 <!-- Page Heading -->
-<div class="container">
+<div class="container page-wrap">
   <div class="block-section">
     <div class="blog-frontpage--meta">
       <p class="categories-p">Categories:&nbsp;&nbsp;</p>

@@ -16,6 +16,7 @@ Text Domain: playgroup-digital-theme
 
 // Import Bootstrap for Sass
 @import "vendor/bootstrap";
+@import "vendor/animate";
 
 // Import Grid Css
 @import "layout/grid";
@@ -32,10 +33,11 @@ html {
 }
 body{
   overflow-x: hidden;
-
-
 }
 
+[data-sr] {
+        visibility: hidden;
+}
 .container {
  background: $white;
 }
@@ -56,12 +58,12 @@ body{
 @import "modules/blog-section--home";
 @import "modules/twitter-section";
 @import "modules/footer";
-//@import "modules/blog-listing";
 @import "modules/blog-listing--single";
 @import "modules/blog-listing--scroll";
 @import "modules/work-listing";
 @import "modules/work-single";
 @import "modules/about";
+@import "modules/page";
 
 
 

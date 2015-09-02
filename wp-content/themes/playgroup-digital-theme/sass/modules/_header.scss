@@ -7,10 +7,7 @@
   color: $white;
   padding-top: ($grid-gutter-width * 4.5);
   padding-bottom:($grid-gutter-width * 4.5);
-  padding-left: ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
-  margin-left: -$grid-gutter-width;
-    margin-right: -$grid-gutter-width;
+
 
   //border-bottom: $gray-light-border 1px solid;
   //border: 1px solid transparent;
@@ -18,8 +15,7 @@
   @media screen and (min-width: $screen-sm-min) {
     padding-top: ($grid-gutter-width * 6);
     padding-bottom:($grid-gutter-width * 6);
-    margin-left: -($grid-gutter-width * 3);
-    margin-right: -($grid-gutter-width * 3);
+
   }
 }
 
@@ -40,18 +36,20 @@ position: relative;
 .contact-header {
   padding-bottom:($grid-gutter-width * 3);
    @include make-xs-column(18);
+   @include make-md-column(2);
 }
 
 .contact-text {
   @include make-xs-column(18);
-  @include make-sm-column(5);
+  @include make-sm-column(18);
+  @include make-md-column(4);
+  @include make-md-column-offset(1);
   padding-bottom:($grid-gutter-width * 2);
   @media screen and (min-width: $screen-sm-min) {
   padding-bottom:($grid-gutter-width * 0);
 }
 }
 .contact-text + .contact-text {
-  @include make-sm-column-offset(1);
 }
 
 .contact a {
@@ -71,8 +69,11 @@ position: relative;
 // Close icons
 // --------------------------------------------------
 .close-button {
-@include make-xs-column(2);
- @media screen and (min-width: $screen-sm-min) {
+@include make-xs-column(1);
+padding-left: 0;
+font-family: $font-family-sans-serif-light;
+ @media screen and (min-width: $screen-md-min) {
+
     position: absolute;
     top: 50%;
     right: 0;
@@ -151,7 +152,8 @@ button.close {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 150px;
+  width: 125px;
+
 
 
 
@@ -401,7 +403,7 @@ button.close {
 }
 
 .nav-wrap.nav-bg{
-
+ transition: all 0.5s ease;
  background: $brand-primary !important;
 }
 .header-nav.nav-bg{
@@ -418,14 +420,20 @@ button.close {
 
 .shrink .navbar-brand {
   transition: width 0.5s ease;
+   transition: height 0.5s ease;
   width:100px;
-  transition: height 0.5s ease;
+
   background-image: url('http://192.168.1.103/playgroup-digital-theme/wp-content/uploads/2015/08/playgroup-digital-logo.svg');
   height: 70px;
 
 }
 }
 
+
+.fade {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
 
 
 

@@ -9,8 +9,8 @@
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
   @media screen and (min-width: $screen-sm-min) {
-  padding-left:  ($gutter * 3);
-  padding-right: ($gutter * 3);
+  padding-left:  ($gutter * 6);
+  padding-right: ($gutter * 6);
   }
   @include clearfix;
 }

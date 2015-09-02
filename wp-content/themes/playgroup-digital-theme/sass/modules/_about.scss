@@ -1,4 +1,5 @@
 .about-header {
+    @extend .container-fluid;
     background: $brand-primary;
     position: relative;
 }
@@ -7,21 +8,34 @@
     background-position: center !important;
     background-size: cover !important;
     opacity: 0.25;
-    padding-bottom: 100%;
     @include greyscale;
-    @media screen and (min-width: $screen-sm-min) {
-    padding-bottom: 40%;
-    }
+    padding-bottom: 60%;
+  padding-bottom: 35vh;
+  @media screen and (min-width: $screen-sm-min) {
+  padding-bottom: 50%;
+  padding-bottom: 55vh;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+  padding-bottom: 35%;
+  padding-bottom: 60vh;
+  }
 }
 
 .about-header--mask {
     background: $brand-primary;
 }
 
+.about-header--row{
+  @include make-row();
+}
+
 .about-header--text {
+    @include make-xs-column(16);
+    @include make-sm-column(8);
     color: $white;
     position: absolute;
     bottom:10%;
+
 }
 
 .about-header--text h1{
@@ -47,6 +61,7 @@
 }
 
 .about-section {
+  @extend .container;
     //background:$white;
     padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
@@ -61,6 +76,7 @@
 }
 
 .two-col-text{
+  @include make-row();
     padding-top: ($grid-gutter-width * 4.5);
     padding-bottom:($grid-gutter-width * 4.5);
     @media screen and (min-width: $screen-sm-min) {
@@ -77,6 +93,17 @@
     border-top: 1px solid $gray-light-border;
 }
 
+.two-col-text--heading {
+    @include make-xs-column(17);
+    @include make-sm-column(5);
+    @include make-md-column(4);
+    padding-bottom:($grid-gutter-width * 3);
+    @media screen and (min-width: $screen-sm-min) {
+        padding-bottom:($grid-gutter-width * 0);
+    }
+
+}
+
 .two-col-text--heading h5{
 
 }
@@ -86,6 +113,11 @@
 }
 
 .two-col-text--body {
+  @include make-xs-column(18);
+  @include make-sm-column(11);
+  @include make-md-column(9);
+  @include make-sm-column-offset(2);
+  @include make-md-column-offset(5);
 }
 
 .about-banner {
@@ -162,6 +194,7 @@
 
 
 .about-section--capabilities {
+  @include make-row();
     padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
     @media screen and (min-width: $screen-sm-min) {
@@ -171,21 +204,70 @@
 }
 
 .capabilities-title {
+   @include make-xs-column(18);
+  @include make-sm-column(4);
+  @include make-md-column(3);
     @media screen and (max-width: $screen-sm-min) {
         padding-bottom: ($grid-gutter-width * 6);
   }
 }
 
-.about-section--capabilities .capabilities-text+.capabilities-text {
-       @media screen and (max-width: $screen-md-min) {
-        padding-top: ($grid-gutter-width * 3);
-  }
+.capabilities-items {
+  @include make-xs-column(18);
+  @include make-sm-column(13);
+  @include make-md-column(14);
+  @include make-sm-column-offset(1);
 }
 
-.about-section--capabilities .capabilities-text:last-child {
-      @media screen and (min-width: $screen-md-min) {
-        padding-top: ($grid-gutter-width * 6);
+.capabilities-items--row {
+  @include make-row();
+  margin-left: - ($grid-gutter-width / 2);
+}
+
+.capabilities-text {
+  @include make-xs-column(18);
+  @include make-md-column(6);
+  @media screen and (max-width: $screen-md-min) {
+  padding-bottom: ($grid-gutter-width * 4.5);
   }
+  @media screen and (min-width: $screen-md-min) {
+    padding-right: ($grid-gutter-width * 6);
+  }
+
+}
+
+.capabilities-text+.capabilities-text{
+@media screen and (max-width: $screen-md-min) {
+ border-top: 1px solid $gray-light-border;
+ padding-top: ($grid-gutter-width * 6);
+}
+}
+
+.capabilities-text:last-of-type {
+    @media screen and (max-width: $screen-md-min) {
+    padding-bottom: ($grid-gutter-width * 0);
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    //margin-top: ($grid-gutter-width * 6);
+  //clear: both;
+  }
+
+}
+
+
+.capabilities-text ul {
+list-style-type: none;
+padding-left: 0;
+}
+.capabilities-text li {
+padding-bottom: ($grid-gutter-width / 2);
+}
+
+.capabilities-text li:before {
+content: "—";
+padding-right: 10px;
+color: $brand-primary;
 }
 
 .about-instagram {

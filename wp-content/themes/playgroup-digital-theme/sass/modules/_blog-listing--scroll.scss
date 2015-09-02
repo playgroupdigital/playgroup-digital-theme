@@ -98,6 +98,7 @@ color: $gray-light;
     background-size: cover !important;
     transition: all 0.5s ease-in-out;
     padding-bottom: 60%;
+    padding-bottom: 35vh;
     position: relative;
     opacity: 0.25;
    transform: translateZ(0);
@@ -105,13 +106,17 @@ color: $gray-light;
 
     transition: all 0.5s ease;
     opacity: 0.55;
-    padding-bottom: 50%;
+      padding-bottom: 50%;
+  padding-bottom: 55vh;
     }
     @media screen and (min-width: $screen-lg-min) {
-    padding-bottom: 35%;
+     padding-bottom: 35%;
+  padding-bottom: 60vh;
     }
 
 }
+
+
 
 .blog-hero:hover .blog-header--image {
    @media screen and (min-width: $screen-sm-min) {
@@ -196,6 +201,9 @@ color: $gray-light;
   @include link-underline-position($font-size-base);
 }
 
+.blog-frontpage--meta p, .blog-frontpage--meta ul {
+@extend .hidden-xs;
+}
 
 .categories-p {
   color: $gray-light;
@@ -236,6 +244,13 @@ color: $gray-light;
     margin-left: ($grid-gutter-width * 2);
   }
 }
+
+.blog-frontpage {
+  @media screen and (min-width: $screen-sm-min) {
+  margin-top: ($grid-gutter-width * 10);
+}
+}
+
 
 .blog-frontpage--meta  {
   @include make-xs-column(18);

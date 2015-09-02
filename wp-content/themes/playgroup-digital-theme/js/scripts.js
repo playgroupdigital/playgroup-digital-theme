@@ -20,14 +20,15 @@ $(document).ready(function() {
      svgeezy.init(false, 'png');
 });
 
-var bottom = $('.container').offset().top;
+
+
+var container = $('.container').offset().top;
     $(document).on("scroll", function(){
     if
-      ($(document).scrollTop() > bottom){
+      ($(document).scrollTop() > container - 100){
       $(".navbar").addClass("shrink");
       $(".nav-wrap").addClass("nav-bg");
       $(".header-nav").addClass("nav-bg");
-
     }
     else
     {
@@ -37,3 +38,5 @@ var bottom = $('.container').offset().top;
 
     }
   });
+
+

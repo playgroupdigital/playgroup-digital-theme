@@ -37,7 +37,7 @@
         </div>
         <div class="footer-text">
           <div class="footer-text--copyright">
-            <p>&copy; Playgroupdigital 2015 </p>
+            <p>&copy;  Playgroupdigital <?php echo date("Y") ?> </p>
           </div>
         </div>
       </div>
@@ -56,7 +56,9 @@
 
 
 <?php wp_footer(); ?>
-
+    <script>
+      window.sr = new scrollReveal();
+    </script>
 
 
 

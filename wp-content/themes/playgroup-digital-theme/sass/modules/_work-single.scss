@@ -4,11 +4,14 @@
   background-position: center !important;
   background-size: cover !important;
   padding-bottom: 60%;
+  padding-bottom: 35vh;
   @media screen and (min-width: $screen-sm-min) {
   padding-bottom: 50%;
+  padding-bottom: 55vh;
   }
   @media screen and (min-width: $screen-lg-min) {
   padding-bottom: 35%;
+  padding-bottom: 60vh;
   }
 
 }

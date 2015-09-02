@@ -19,7 +19,7 @@ get_header(); ?>
       <div class="home-header">
         <div class="home-header--row">
           <div class="home-header--text">
-            <h1><?php the_field('home_hero_text'); ?></h1>
+            <h1 data-sr="opacity 0 ease-in-out"><?php the_field('home_hero_text'); ?></h1>
 
             <!--<a class="btn btn-primary home-btn" href="about.html" role="button"><span>Learn more about us</span></a>-->
           </div>

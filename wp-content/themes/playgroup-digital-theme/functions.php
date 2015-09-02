@@ -170,7 +170,9 @@ wp_register_script( 'respond_js', 'https://oss.maxcdn.com/respond/1.4.2/respond.
 
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20120206', true );
+ wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/js/scrollReveal.min.js', array('jquery'), '20120206', true );
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20120206', true );
+
   }
 add_action( 'wp_enqueue_scripts', 'playgroup_digital_theme_scripts' );
 

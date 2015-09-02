@@ -1,7 +1,7 @@
 
         <!-- Page Heading -->
 
-    <div class="container">
+    <div class="container blog-frontpage">
       <div class="block-section">
         <div class="blog-frontpage--meta">
 

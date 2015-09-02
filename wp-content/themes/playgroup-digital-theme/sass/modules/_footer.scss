@@ -1,6 +1,6 @@
 .footer {
   @extend .container-fluid;
-  font-size: $font-size-base;
+  font-size: $font-size-small;
    background: $brand-grey;
 }
 
@@ -11,20 +11,20 @@
 .footer-text {
   @include make-row();
   color: $white;
+  padding-top: ($grid-gutter-width * 3);
+  padding-bottom:($grid-gutter-width * 3);
+  @media screen and (min-width: $screen-sm-min) {
   padding-top: ($grid-gutter-width * 4.5);
   padding-bottom:($grid-gutter-width * 4.5);
-  @media screen and (min-width: $screen-sm-min) {
-  padding-top: ($grid-gutter-width * 6);
-  padding-bottom:($grid-gutter-width * 6);
   }
 }
 
 .footer-text + .footer-text {
   padding-top: ($grid-gutter-width * 0);
-  padding-bottom:($grid-gutter-width * 4.5);
+  padding-bottom:($grid-gutter-width * 3);
   @media screen and (min-width: $screen-sm-min) {
   padding-top: ($grid-gutter-width * 0);
-  padding-bottom:($grid-gutter-width * 6);
+  padding-bottom:($grid-gutter-width * 4.5);
   }
 }
 
@@ -42,7 +42,7 @@
    @include make-xs-column(18);
     @include make-sm-column(4);
   margin-bottom:0px;
-  padding-bottom: ($grid-gutter-width * 1.5 - 2px);
+
 }
 
 .footer-text--form {
@@ -108,6 +108,7 @@ textarea, input { outline: none;
 
 .sub-footer {
   @extend .container-fluid;
+  background: $white;
   font-size: $font-size-base;
 }
 

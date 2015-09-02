@@ -25,9 +25,7 @@ $thumb_url = $thumb_url_array[0];
       </div>
   </div>
 
-<?php endwhile; else : ?>
-  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-  <?php endif; wp_reset_query(); ?>
+
 
 
 
@@ -108,12 +106,11 @@ $thumb_url = $thumb_url_array[0];
                 <?php endif; ?>
 
 
-
-
-
-
-
         <?php endwhile; ?>
+
+        <?php endwhile; else : ?>
+  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+  <?php endif; wp_reset_query(); ?>
 
 </div>
 
