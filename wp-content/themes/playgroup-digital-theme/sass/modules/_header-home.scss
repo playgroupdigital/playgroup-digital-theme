@@ -1,11 +1,13 @@
 .home-header {
     @extend .container;
     transition: all 0.5s ease-in-out;
+
 }
 
 .home-header--row {
   @include make-row();
   transition: all 0.5s ease-in-out;
+
 }
 
 .home-header--image {
@@ -31,9 +33,10 @@
    padding-top: 10vh;
    @media screen and (min-width: $screen-sm-min) {
     padding-top: 20%;
-    padding-top: 20vh;
+    padding-top: 43vh;
     }
 }
+
 
 
 

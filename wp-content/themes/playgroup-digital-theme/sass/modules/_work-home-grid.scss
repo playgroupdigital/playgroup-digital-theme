@@ -4,7 +4,7 @@
   background: $white;
   transform: translateZ(0);
   position: relative;
-  margin-bottom: $grid-gutter-width * 2;
+  margin-bottom: $grid-gutter-width * 0;
   @media screen and (min-width: $screen-sm-min) {
   margin-bottom: $grid-gutter-width * 0;
   }
@@ -33,6 +33,10 @@
    transform: translateZ(0);
   transition: all 0.3s ease;
   background:transparent;
+
+   @media screen and (max-width: $screen-sm-min) {
+      margin-bottom: $grid-gutter-width * 1.5;
+   }
   @media screen and (min-width: $screen-sm-min) {
     position: absolute;
     top:50%;

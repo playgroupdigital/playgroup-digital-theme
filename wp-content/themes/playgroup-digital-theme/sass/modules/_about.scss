@@ -9,16 +9,16 @@
     background-size: cover !important;
     opacity: 0.25;
     @include greyscale;
-    padding-bottom: 60%;
-  padding-bottom: 35vh;
-  @media screen and (min-width: $screen-sm-min) {
-  padding-bottom: 50%;
-  padding-bottom: 55vh;
-  }
-  @media screen and (min-width: $screen-lg-min) {
-  padding-bottom: 35%;
-  padding-bottom: 60vh;
-  }
+    padding-bottom: 80%;
+    padding-bottom: 55vh;
+    @media screen and (min-width: $screen-sm-min) {
+    padding-bottom: 50%;
+    padding-bottom: 65vh;
+    }
+    @media screen and (min-width: $screen-md-min) {
+    padding-bottom: 45%;
+    padding-bottom: 75vh;
+    }
 }
 
 .about-header--mask {
@@ -121,7 +121,7 @@
 }
 
 .about-banner {
-    background: $dark-blue-grey;
+    background: $white;
     position: relative;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -231,7 +231,7 @@
   padding-bottom: ($grid-gutter-width * 4.5);
   }
   @media screen and (min-width: $screen-md-min) {
-    padding-right: ($grid-gutter-width * 6);
+    padding-right: ($grid-gutter-width * 4.5);
   }
 
 }
@@ -311,7 +311,8 @@ color: $brand-primary;
 }
 
 .about-section--people {
-    padding-top: ($grid-gutter-width * 3);
+  @include make-row();
+    //padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
     @media screen and (min-width: $screen-sm-min) {
         padding-top: ($grid-gutter-width * 6);
@@ -321,12 +322,25 @@ color: $brand-primary;
 }
 
 .people {
-    margin-left: 0;
-    margin-right: 0;
+    @include make-row();
+      margin-left: - ($grid-gutter-width / 2);
+      margin-right: - ($grid-gutter-width / 2);
+}
+
+.people-title {
+   @include make-xs-column(18);
+  @include make-sm-column(4);
+  @include make-md-column(3);
+
+    @media screen and (max-width: $screen-sm-min) {
+        padding-bottom: ($grid-gutter-width * 3);
+  }
 }
 
 .people-profile {
-    @include greyscale;
+    //@include greyscale;
+    @include make-xs-column(18);
+    @include make-sm-column(6);
     padding-bottom:($grid-gutter-width * 3);
     @media screen and (min-width: $screen-sm-min) {
         padding-bottom:($grid-gutter-width * 4.5);
@@ -334,11 +348,14 @@ color: $brand-primary;
 
 }
 
-.people-title {
-    @media screen and (max-width: $screen-sm-min) {
-        padding-bottom: ($grid-gutter-width * 6);
-  }
+.about-people--items {
+  @include make-xs-column(18);
+  @include make-sm-column(13);
+  @include make-md-column(14);
+  @include make-sm-column-offset(1);
 }
+
+
 
 .people-profile--image {
     background-position: center !important;
@@ -351,6 +368,15 @@ color: $brand-primary;
     margin-bottom: ($grid-gutter-width * 0.5);
 
 }
+
+
+.people-profile p {
+    @media screen and (min-width: $screen-md-min) {
+    padding-right: ($grid-gutter-width * 4.5);
+  }
+}
+
+
 
 
 .about-section--dark {

@@ -15,9 +15,9 @@ get_header(); ?>
       <div class="about-header--image" style="background: url('<?php echo $thumb_url ?>');"></div>
       </div>
       <div class="container">
-      <div class="about-header--row">
-       <div class="about-header--text">
-         <h1>About the studio —</h1>
+      <div class="about-header--row" >
+       <div class="about-header--text" data-sr>
+         <h1 >About the studio —</h1>
          <p>
            <?php the_content(); ?>
          </p>
@@ -37,11 +37,11 @@ get_header(); ?>
     <?php while ( have_rows('methodology') ) : the_row();?>
 
 <div class="two-col-text">
-      <div class=" two-col-text--heading">
+      <div class=" two-col-text--heading" data-sr="enter left">
         <h5><?php the_sub_field('methodology_title');?></h5>
         <p><?php the_sub_field('methodology_brief');?></p>
       </div>
-      <div class="two-col-text--body">
+      <div class="two-col-text--body" data-sr="enter right">
         <?php the_sub_field('methodology_text');?>
       </div>
   </div>
@@ -56,18 +56,19 @@ get_header(); ?>
 
 
 
-  <section class="container-fluid about-banner about-banner--image" style="background: url('<?php the_field('banner_image'); ?>');">
-    <div class="row " >
-    </div>
+  <section class="container-fluid about-banner about-banner--image"  style="background: url('<?php the_field('banner_image'); ?>');">
+    <div class="row" >
+
     <div class="col-xs-14 col-xs-push-2 about-banner--text">
-      <p>Great things happen when we work together</p>
-      <a class="btn btn-primary about-banner--btn " href="about.html" role="button">View case studies</a>
+      <p data-sr>Great things happen when we work together</p>
+      <a class="btn btn-primary about-banner--btn " href="about.html" role="button" data-sr>View case studies</a>
+    </div>
     </div>
   </section>
 
 
   <section class="about-section">
-    <div class="about-section--capabilities">
+    <div class="about-section--capabilities" data-sr>
       <div class="capabilities-title">
         <h5>What we do</h5>
       </div>
@@ -100,64 +101,33 @@ get_header(); ?>
 
 
 
+  <section class="about-section" >
+   <div class="about-section--people" >
+    <div class="people-title"><h5>People</h5></div>
+    <div class="about-people--items">
+      <div class="people">
 
-    <section class="container-fluid about-instagram">
-      <div class="row about-container">
-        <div class="half-wrap">
-        <a href="#">
-          <div class="about-instagram-half " style="background: url('https://unsplash.it/4133/2745?image=534');">
-          </div>
-        </a>
-        </div>
-        <div class="quarter-wrap">
-                <div class="about-instagram-quarter" style="background: url('https://unsplash.it/700/700');">
-                </div>
-                <div class="about-instagram-quarter" style="background: url('https://unsplash.it/600/600');">
-                </div>
-                <div class="about-instagram-quarter" style="background: url('https://unsplash.it/500/500');">
-                </div>
-                <div class="about-instagram-quarter" style="background: url('https://unsplash.it/1000/1000');">
-                </div>
-          </div>
-      </div>
-    </section>
+      <?php
+    $args = array(
+    'post_type' => 'team'
+    );
+    $query = new WP_Query( $args );
+    ?>
+    <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-  <section class="about-section">
-   <div class="row about-section--people">
-    <div class="col-xs-18 col-sm-6 people-title"><h5>People</h5></div>
-    <div class="col-xs-18 col-sm-12">
-      <div class="row people">
-        <div class="col-sm-6 people-profile">
-           <div class="people-profile--image" style="background: url('https://unsplash.it/800/500');"></div>
-          <h5>Firstname Lastname</h5>
-          <p>Job title</p>
+        <div class="people-profile" data-sr>
+        <?php
+          $thumb_id = get_post_thumbnail_id();
+          $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+          $thumb_url = $thumb_url_array[0];
+          ?>
+           <div class="people-profile--image" style="background: url('<?php echo $thumb_url ?>');"></div>
+          <h5><?php echo get_the_title(); ?> </h5>
+          <p><?php echo get_the_content(); ?> </p>
         </div>
-        <div class="col-sm-6 people-profile">
-           <div class="people-profile--image" style="background: url('https://unsplash.it/800/880');"></div>
-          <h5>Firstname Lastname</h5>
-          <p>Job title</p>
-        </div>
-        <div class="col-sm-6 people-profile">
-           <div class="people-profile--image" style="background: url('https://unsplash.it/800/570');"></div>
-          <h5>Firstname Lastname</h5>
-          <p>Job title</p>
-        </div>
-        <div class="col-sm-6 people-profile">
-           <div class="people-profile--image" style="background: url('https://unsplash.it/680/500');"></div>
-          <h5>Firstname Lastname</h5>
-          <p>Job title</p>
-        </div>
-        <div class="col-sm-6 people-profile">
-           <div class="people-profile--image" style="background: url('https://unsplash.it/900/500');"></div>
-          <h5>Firstname Lastname</h5>
-          <p>Job title</p>
-        </div>
-        <div class="col-sm-6 people-profile">
-           <div class="people-profile--image" style="background: url('https://unsplash.it/800/800');"></div>
-          <h5>Firstname Lastname</h5>
-          <p>Job title</p>
-        </div>
-
+    <?php endwhile; else : ?>
+    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <?php endif; wp_reset_query(); ?>
       </div>
     </div>
 

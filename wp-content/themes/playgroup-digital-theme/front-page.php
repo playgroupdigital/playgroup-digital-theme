@@ -19,7 +19,7 @@ get_header(); ?>
       <div class="home-header">
         <div class="home-header--row">
           <div class="home-header--text">
-            <h1 data-sr="opacity 0 ease-in-out"><?php the_field('home_hero_text'); ?></h1>
+            <h1 data-sr="enter left"><?php the_field('home_hero_text'); ?></h1>
 
             <!--<a class="btn btn-primary home-btn" href="about.html" role="button"><span>Learn more about us</span></a>-->
           </div>
@@ -30,7 +30,7 @@ get_header(); ?>
     <!-- Latest from the studio white block -->
     <div class="container">
       <div class="block-section">
-        <div class="work-block--heading">
+        <div class="work-block--heading" data-sr>
           <p  id="work">Latest from the studio</p>
         </div>
       </div>
@@ -52,9 +52,9 @@ get_header(); ?>
           ?>
     <!-- Project -->
     <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-      <div class="work-home">
+      <div class="work-home" data-sr>
         <a href="<?php the_permalink(); ?>">
-          <div class="work-mask" style="background: <?php the_field('color'); ?>;">
+          <div class="work-mask" style="background: <?php the_field('color'); ?>;" >
           <?php
             $thumb_id = get_post_thumbnail_id();
             $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -84,9 +84,9 @@ get_header(); ?>
 
     <!-- Latest from the blog white block -->
     <section class="container-fluid blog-home">
-      <div class="container  blog-section">
+      <div class="container  blog-section" >
         <div class="block-section">
-          <div class="blog-section--heading">
+          <div class="blog-section--heading" data-sr="enter left">
             <p>Latest from the blog</p>
           </div>
           <?php
@@ -99,7 +99,7 @@ get_header(); ?>
           ?>
           <div class="blog-section--text">
             <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-            <div class="blog-section--text-content">
+            <div class="blog-section--text-content" data-sr="enter right">
               <h1>
               <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?> </a>
               </h1>
@@ -126,13 +126,15 @@ get_header(); ?>
 
 
     <!-- Twitter -->
-    <div class="container">
-      <div class="row twitter-block-section">
-        <div class="twitter-block-section--heading">
+    <div class="container" >
+      <div class="row twitter-block-section" >
+        <div class="twitter-block-section--heading" data-sr>
           <h4>@PlaygroupIdeas</h4>
         </div>
       </div>
-      <?php dynamic_sidebar( 'twitter' ); ?>
+      <div data-sr>
+        <?php dynamic_sidebar( 'twitter' ); ?>
+      </div>
     </div>
     <!-- /Twitter -->
     <!-- Footer -->

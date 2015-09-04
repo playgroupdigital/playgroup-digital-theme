@@ -39,4 +39,23 @@ var container = $('.container').offset().top;
     }
   });
 
+var config = {
+        enter:    'bottom',
+        move:     '30px',
+        over:     '1s',
+        wait:     '0s',
+        easing: 'ease',
+        mobile: 'false',
+        scale:    { direction: 'up', power: '0%' },
+        rotate:   { x: 0, y: 0, z: 0 },
+        opacity:  0,
+        reset:  false,
+        delay:  'onload',
+        vFactor: 0.15
+       }
+
+$(document).ready(function() {
+      window.sr = new scrollReveal( config );
+  });
+
 

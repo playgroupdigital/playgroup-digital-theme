@@ -97,8 +97,8 @@ color: $gray-light;
     background-position: center !important;
     background-size: cover !important;
     transition: all 0.5s ease-in-out;
-    padding-bottom: 60%;
-    padding-bottom: 35vh;
+    padding-bottom: 80%;
+    padding-bottom: 55vh;
     position: relative;
     opacity: 0.25;
    transform: translateZ(0);
@@ -106,15 +106,16 @@ color: $gray-light;
 
     transition: all 0.5s ease;
     opacity: 0.55;
-      padding-bottom: 50%;
-  padding-bottom: 55vh;
+    padding-bottom: 50%;
+    padding-bottom: 65vh;
     }
-    @media screen and (min-width: $screen-lg-min) {
-     padding-bottom: 35%;
-  padding-bottom: 60vh;
+    @media screen and (min-width: $screen-md-min) {
+    padding-bottom: 45%;
+    padding-bottom: 75vh;
     }
 
 }
+
 
 
 

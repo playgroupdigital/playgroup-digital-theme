@@ -16,7 +16,11 @@
 <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
 <?php wp_head(); ?>
-<script src="//cdn.jsdelivr.net/g/jquery@1.11,jquery.midnight@1.0"></script>
+    <style>
+      [data-sr] {
+        visibility: hidden;
+      }
+    </style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -24,7 +28,7 @@
 
     <div class="contact">
       <div class="contact-container">
-        <div class="row contact-row ">
+        <div class="contact-row ">
           <div class="contact-header ">
             <h4>Get in touch</h4>
           </div>

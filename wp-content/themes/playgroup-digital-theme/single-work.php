@@ -64,11 +64,33 @@ $thumb_url = $thumb_url_array[0];
                             </div>
                         </div>
                       </div>
+                    <?php elseif(get_row_layout() == "2col-thirds"): ?>
+                  <div class="work-content--block">
+                        <div class="work-content">
+                            <div class="work-content-one--third">
+                               <?php the_sub_field("third-1"); ?>
+                            </div>
+                            <div class="work-content-two--third">
+                               <?php the_sub_field("third-2"); ?>
+                            </div>
+                        </div>
+                      </div>
+                        <?php elseif(get_row_layout() == "2col-thirds-reverse"): ?>
+                  <div class="work-content--block">
+                        <div class="work-content">
+                            <div class="work-content-two--third-reverse">
+                               <?php the_sub_field("third-1-reverse"); ?>
+                            </div>
+                            <div class="work-content-one--third-reverse">
+                               <?php the_sub_field("third-2-reverse"); ?>
+                            </div>
+                        </div>
+                      </div>
                   <?php elseif(get_row_layout() == "1col-dark"): ?>
                      <div class="work-content--block-dark">
-                       <div class="container">
+                       <div class="work-content--block">
                         <div class="work-content">
-                                <div class="work-content--1col-dark">
+                                <div class="work-content--1col">
                                    <?php the_sub_field("full_column_1col-dark"); ?>
                                 </div>
                              </div>
@@ -76,8 +98,8 @@ $thumb_url = $thumb_url_array[0];
                       </div>
                     <?php elseif(get_row_layout() == "2col-dark"): ?>
                   <div class="work-content--block-dark">
+                        <div class="work-content--block">
                         <div class="work-content">
-                        <div class="container">
                             <div class="work-content--2col">
                                <?php the_sub_field("two_column_1-dark"); ?>
                             </div>
@@ -89,8 +111,8 @@ $thumb_url = $thumb_url_array[0];
                       </div>
                     <?php elseif(get_row_layout() == "3col-dark"): ?>
                       <div class="work-content--block-dark">
+                        <div class="work-content--block">
                         <div class="work-content">
-                        <div class="container">
                             <div class="work-content--3col">
                                <?php the_sub_field("three_column_1-dark"); ?>
                             </div>
@@ -102,6 +124,14 @@ $thumb_url = $thumb_url_array[0];
                             </div>
                         </div>
                       </div>
+                      </div>
+                       <?php elseif(get_row_layout() == "full-width"): ?>
+                     <div class="full-width--image">
+                            <img src="<?php the_sub_field("full-width-image"); ?>" class="img-responsive"/>
+                      </div>
+                    <?php elseif(get_row_layout() == "full-width-content"): ?>
+                     <div class="full-width-content">
+                            <?php the_sub_field("full-width-content-field"); ?>
                       </div>
                 <?php endif; ?>
 
