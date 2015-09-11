@@ -3,15 +3,18 @@
   transition: all 0.5s ease-in-out;
   background-position: center !important;
   background-size: cover !important;
-  padding-bottom: 60%;
+  padding-bottom: 70%;
   padding-bottom: 35vh;
+
   @media screen and (min-width: $screen-sm-min) {
-  padding-bottom: 50%;
-  padding-bottom: 55vh;
+  padding-bottom: 60%;
+  padding-bottom: 50vh;
+  margin-top: 100px;
+
   }
   @media screen and (min-width: $screen-lg-min) {
   padding-bottom: 35%;
-  padding-bottom: 60vh;
+  padding-bottom: 50vh;
   }
 
 }
@@ -29,24 +32,25 @@
   }
 }
 .work-single--overview h1 {
-  display: inline-block;
+  //display: inline-block;
   font-size: $font-size-h4;
   color: $white;
   margin: 0;
   font-family: $font-family-sans-serif-medium;
   padding-bottom:($grid-gutter-width * 3);
+  padding-right: ($grid-gutter-width * 6);
   @media screen and (min-width: $screen-sm-min) {
     font-size: $font-size-h4;
-
+    padding-right: 0;
   }
   @media screen and (min-width: $screen-md-min) {
     font-size: $font-size-h3;
   }
 }
 .work-single--overview h4 {
-  color: $white;
+    color: $light-blue-grey;
   margin: 0;
-  padding-bottom:($grid-gutter-width * 1);
+  padding-bottom:($grid-gutter-width * 0.5);
   font-family: $font-family-sans-serif-demi;
   font-size: $font-size-base;
    @media screen and (max-width: $screen-sm-min) {
@@ -57,12 +61,12 @@
 
 .work-single--overview p {
   color: $white;
-  padding-bottom: ($grid-gutter-width * 3);
-  float: left;
+  padding-bottom: ($grid-gutter-width * 0);
   @media screen and (min-width: $screen-sm-min) {
-  float: none;
+  padding-bottom: ($grid-gutter-width * 3);
   }
 }
+
 
 .work-single--project-info {
   @include make-xs-column(18);
@@ -73,58 +77,72 @@
 }
 
 .work-single--project-info p {
-  padding-bottom: ($grid-gutter-width * 0);
+  padding-bottom:($grid-gutter-width * 1.5);
+  float: none;
+  color: $light-blue-grey;
 }
 
 .work-single--project-brief {
   @include make-xs-column(18);
-  @include make-sm-column(10);
-  @include make-sm-column-offset(2);
+  @include make-sm-column(8);
+  @include make-sm-column-offset(4);
+  @media screen and (max-width: $screen-sm-min) {
+  padding-top:($grid-gutter-width * 4.5);
+  }
+
 }
 
-.work-single--overview-inverse {
-    padding-top: ($grid-gutter-width * 4);
-    padding-bottom: ($grid-gutter-width * 4);
-    background: $white;
-    border-bottom: 1px solid $gray-light-border;
+.work-single--project-brief p {
+  padding-bottom:($grid-gutter-width * 1.5);
   @media screen and (min-width: $screen-sm-min) {
-    padding-top: ($grid-gutter-width * 6);
-    padding-bottom: ($grid-gutter-width * 3);
-  }
+    font-size: $font-size-large;
+
 }
-.work-single--overview-inverse h1 {
-  font-size: $font-size-h4;
-  color: $brand-primary;
-  margin: 0;
-  padding-bottom:($grid-gutter-width * 3);
+}
+
+.work-single--project-brief p+p {
+  padding-top:($grid-gutter-width * 3);
   @media screen and (min-width: $screen-sm-min) {
-    font-size: $font-size-h4;
-
-  }
-  @media screen and (min-width: $screen-md-min) {
-    font-size: $font-size-h3;
-  }
+font-size: $font-size-base;
 }
-.work-single--overview-inverse h4 {
-  color: $gray-dark;
-  margin: 0;
-  padding-bottom:($grid-gutter-width * 1);
-  font-family: $font-family-sans-serif-demi;
-  font-size: $font-size-base;
 }
-.work-single--overview-inverse p {
 
-  padding-bottom: ($grid-gutter-width * 3);
-  float: left;
+.work-single--project-brief a {
+  color: $white;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  @include link-underline-base($white, transparent);
+  @include link-underline-position($font-size-base);
   @media screen and (min-width: $screen-sm-min) {
-  float: none;
+
+   }
+}
+
+
+.work-single--project-brief a:after {
+ content: "→";
+  //font-family: $font-family-monospace;
+
+  font-weight: normal;
+  transition: all 0.3s ease;
+  margin-left: ($grid-gutter-width);
+  opacity: 1;
+}
+.work-single--project-brief a:hover:after {
+  @media screen and (min-width: $screen-sm-min) {
+    margin-left: $grid-gutter-width * 2;
+
+
   }
+
 }
 
 
 
 
-
+.work-single--project-brief p a:hover {
+   opacity: 0.5;
+}
 
 
 
@@ -231,7 +249,7 @@ margin-top: $grid-gutter-width * 1.5;
 
 }
 .work-content--2col+.work-content--2col {
-    padding-top:($grid-gutter-width * 3);
+    padding-top:($grid-gutter-width * 1.5);
     @media screen and (min-width: $screen-sm-min) {
     padding-top:($grid-gutter-width * 0);
 }
@@ -272,14 +290,14 @@ margin-top: $grid-gutter-width * 1.5;
 
 .work-content-one--third {
     @include make-xs-column(18);
-    @include make-md-column(5);
+    @include make-md-column(6);
 
 }
 
 .work-content-two--third {
     @include make-xs-column(18);
     @include make-md-column(12);
-     @include make-md-column-offset(1);
+
 }
 
 .work-content-one--third+.work-content-two--third {
@@ -291,8 +309,8 @@ margin-top: $grid-gutter-width * 1.5;
 
 .work-content-one--third-reverse {
     @include make-xs-column(18);
-    @include make-md-column(5);
-    @include make-md-column-offset(1);
+    @include make-md-column(6);
+
 
 }
 
@@ -449,6 +467,67 @@ margin-top: $grid-gutter-width * 1.5;
   @include link-underline-position($blockquote-font-size);
 
 }
+
+.main-gallery {
+width: 100%;
+}
+.gallery-cell {
+ width: 100%; /* full width */
+ padding-bottom: 100%;
+     background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+ margin-right: 0px;
+   @media screen and (min-width: $screen-sm-min) {
+   padding-bottom: 60%;
+   }
+}
+
+/* big buttons, no circle */
+.flickity-prev-next-button {
+  width: 45px;
+  height: 45px;
+
+  @media screen and (min-width: $screen-sm-min) {
+  width: 75px;
+  height: 75px;
+   }
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: $dark-blue-grey;
+
+}
+.flickity-prev-next-button.no-svg {
+  color: $dark-blue-grey;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
+
+/* position dots in gallery */
+.flickity-page-dots {
+  bottom: 5%;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 7px;
+  height: 7px;
+  opacity: 0.3;
+  background: $dark-blue-grey;
+  border: 1px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  opacity: 0.7;
+}
+
+
 
 
 

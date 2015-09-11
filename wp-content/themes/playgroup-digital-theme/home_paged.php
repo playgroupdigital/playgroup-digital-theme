@@ -17,10 +17,10 @@
 
 
 
-<div class="container blog-entry">
+<div class="blog-entry">
   <div class="row blog-entry--list clearfix">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div class="blog-entry--single">
+    <div class="blog-entry--single" data-sr>
     <a href="<?php the_permalink(); ?>">
      <?php
             $thumb_id = get_post_thumbnail_id();
@@ -64,12 +64,12 @@
     <div class="blog-navigation">
       <div class="container">
       <div class="block-section ">
-        <div class="blog-navigation--links link-left ">
+        <div class="blog-navigation--links link-left " data-sr="enter right">
           <p>
             <?php echo get_previous_posts_link( 'Previous Blog Entries'); ?>
           </p>
         </div>
-        <div class="blog-navigation--links link-right text-right">
+        <div class="blog-navigation--links link-right text-right" data-sr="enter left">
           <p>
             <?php echo get_next_posts_link( 'Next Blog Entries'); ?>
           </p>

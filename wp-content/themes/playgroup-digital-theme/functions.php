@@ -170,9 +170,11 @@ wp_register_script( 'respond_js', 'https://oss.maxcdn.com/respond/1.4.2/respond.
 
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20120206', true );
- wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/js/scrollReveal.min.js', array('jquery'), '20120206', true );
+  wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/js/scrollReveal.min.js', array('jquery'), '20120206', true );
+  wp_enqueue_script( 'flickity', get_template_directory_uri() . '/js/flickity.pkgd.min.js', array('jquery'), '20120206', true );
+  wp_register_script('svgeezy', get_template_directory_uri() . '/js/svgeezy.js', array('jquery'), '', true );
+            wp_enqueue_script( 'svgeezy');
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20120206', true );
-
   }
 add_action( 'wp_enqueue_scripts', 'playgroup_digital_theme_scripts' );
 
@@ -184,11 +186,7 @@ add_action( 'wp_enqueue_scripts', 'playgroup_digital_theme_scripts' );
 
     add_action('wp_print_styles', 'load_fonts');
 
- function load_svg_fallback() {
-            wp_register_script('svgeezy', get_template_directory_uri() . '/js/svgeezy.js', array('jquery'), '', true );
-            wp_enqueue_script( 'svgeezy');
-        }
- add_action('wp_print_styles', 'load_svg_fallback');
+
 
 /**
  * Load Jetpack compatibility file.
@@ -223,7 +221,13 @@ add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
 function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
+
 add_filter('the_content', 'filter_ptags_on_images');
+
+function filter_ptags_on_acf_images($acfcontent){
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $acfcontent);
+  }
+  add_filter('acf_the_content', 'filter_ptags_on_images');
 
 function bootstrap_responsive_images( $html ){
   $classes = 'img-responsive'; // separated by spaces, e.g. 'img image-link'

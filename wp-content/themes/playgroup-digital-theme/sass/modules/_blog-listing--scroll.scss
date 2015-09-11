@@ -10,16 +10,25 @@
 margin-bottom: ($grid-gutter-width * 3);
 @include make-xs-column(18);
   @include make-sm-column(9);
-@media screen and (min-width: $screen-md-min) {
-  margin-bottom:($grid-gutter-width * 1.5) ;
+@media screen and (min-width: $screen-sm-min) {
+  margin-bottom:($grid-gutter-width *3) ;
+
   }
-@media screen and (min-width: $screen-lg-min) {
-  margin-bottom:($grid-gutter-width * 0) ;
+  @media screen and (min-width: $screen-md-min) {
+  margin-bottom:($grid-gutter-width *4.5) ;
+
+  }
 }
 
+
+
+
+.blog-entry--single:nth-child(odd) {
+clear: both;
 }
 
 .blog-entry--title {
+
 }
 
 .blog-entry--image {
@@ -91,14 +100,17 @@ color: $gray-light;
     transform: translateZ(0);
     position: relative;
     @extend .container-fluid;
+      @media screen and (min-width: $screen-sm-min) {
+    margin-top: 100px;
+    }
 }
 
 .blog-header--image {
     background-position: center !important;
     background-size: cover !important;
     transition: all 0.5s ease-in-out;
-    padding-bottom: 80%;
-    padding-bottom: 55vh;
+    padding-bottom: 100%;
+    padding-bottom: 70vh;
     position: relative;
     opacity: 0.25;
    transform: translateZ(0);
@@ -106,12 +118,12 @@ color: $gray-light;
 
     transition: all 0.5s ease;
     opacity: 0.55;
-    padding-bottom: 50%;
-    padding-bottom: 65vh;
+    padding-bottom: 60%;
+    padding-bottom: 50vh;
     }
     @media screen and (min-width: $screen-md-min) {
-    padding-bottom: 45%;
-    padding-bottom: 75vh;
+    padding-bottom: 35%;
+    padding-bottom: 50vh;
     }
 
 }
@@ -247,6 +259,8 @@ color: $gray-light;
 }
 
 .blog-frontpage {
+  @extend .container;
+  margin-top: ($grid-gutter-width * 7);
   @media screen and (min-width: $screen-sm-min) {
   margin-top: ($grid-gutter-width * 10);
 }

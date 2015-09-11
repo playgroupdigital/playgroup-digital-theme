@@ -1,8 +1,12 @@
+
+
 .work-block {
   //background: $white;
   @extend .container;
     padding-bottom:($grid-gutter-width * 3);
+
   @media screen and (min-width: $screen-sm-min) {
+      margin-top: 100px;
   padding-bottom:($grid-gutter-width * 12);
   }
 }
@@ -62,8 +66,9 @@
     background-size: cover !important;
     padding-bottom: 60%;
     @media screen and (min-width: $screen-sm-min) {
+      transition: opacity 0.3s ease-in-out;
     opacity: 1;
-    transition: all 0.25s ease-in-out;
+
       transform: translateZ(0);
   }
 }
@@ -98,7 +103,7 @@ opacity: 1;
 color: $white;
 position: absolute;
 left: 10%;
-top:12.5%
+top:12.5%;
 }
 
 .work-item--text  h2{

@@ -11,7 +11,7 @@
       </div>
       <div class="container">
       <div class="blog-header">
-              <div class="blog-header--text">
+              <div class="blog-header--text" data-sr>
                 <a href="<?php the_permalink(); ?>"><h1><?php echo get_the_title(); ?></h1></a>
                 <?php the_excerpt(); ?>
                 <p><a href="<?php the_permalink(); ?>">Read more</a></p>
@@ -26,7 +26,7 @@
 
     <div class="container">
       <div class="block-section">
-        <div class="blog-frontpage--meta">
+        <div class="blog-frontpage--meta" data-sr>
 
          <p class="categories-p">Categories:&nbsp;&nbsp;</p>
                      <ul class="list-unstyled category-list">
@@ -41,9 +41,9 @@
 
 
 <div class="blog-entry">
-  <div class="blog-entry--list">
+  <div class="blog-entry--list" >
   <?php query_posts('posts_per_page=8&offset=1'); if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div <?php post_class( 'blog-entry--single' ); ?>>
+    <div <?php post_class( 'blog-entry--single' ); ?> data-sr>
      <a href="<?php the_permalink(); ?>">
      <?php
             $thumb_id = get_post_thumbnail_id();
@@ -87,12 +87,12 @@
     <div class="blog-navigation">
       <div class="container">
       <div class="block-section">
-        <div class=" blog-navigation--links link-left ">
+        <div class=" blog-navigation--links link-left " data-sr="enter right">
           <p>
             <?php echo get_previous_posts_link( 'Previous Blog Entries'); ?>
           </p>
         </div>
-        <div class="blog-navigation--links link-right text-right">
+        <div class="blog-navigation--links link-right text-right" data-sr="enter left">
           <p>
             <?php echo get_next_posts_link( 'Next Blog Entries'); ?>
           </p>

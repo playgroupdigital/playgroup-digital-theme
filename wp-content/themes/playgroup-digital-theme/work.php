@@ -2,19 +2,9 @@
 /* Template Name: Work */
 get_header(); ?>
 <!-- Page Heading -->
-<div class="container page-wrap">
-  <div class="block-section">
-    <div class="blog-frontpage--meta">
-      <p class="categories-p">Categories:&nbsp;&nbsp;</p>
-      <ul class="list-unstyled category-list">
-        <?php wp_list_categories('exclude=&title_li=' ); ?>
-      </ul>
-    </div>
-  </div>
-</div>
 <!-- /Page Heading -->
 <div class="work-block">
-  <div class="block-section">
+  <div class="block-section grid">
     <?php
     $num_posts = 6;
     $args = array(
@@ -24,7 +14,7 @@ get_header(); ?>
     $query = new WP_Query( $args );
     ?>
     <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-    <div class="work-item">
+    <div <?php post_class('work-item'); ?> data-sr>
       <a href="<?php the_permalink(); ?>">
         <div class="work-mask" style="background: <?php the_field('color'); ?>;">
           <?php

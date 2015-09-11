@@ -7,24 +7,25 @@ $thumb_id = get_post_thumbnail_id();
 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 $thumb_url = $thumb_url_array[0];
 ?>
-<div class="work-single--featured" style="background: url('<?php echo $thumb_url ?>');"></div>
-  <div class="work-single work-single--overview">
+<div  class="work-single--featured" style="background: url('<?php echo $thumb_url ?>');" ></div>
+  <div class="work-single work-single--overview" >
    <div class="container">
    <div class="block-section">
-           <div class="work-single--project-info" >
-             <p><?php the_field('client-name'); ?></p>
-             <h1><?php the_title(); ?></h1>
+           <div class="work-single--project-info" data-sr>
+           <h1><?php the_title(); ?></h1>
+           <p><?php the_field('client-name');  ?></p>
+
           </div>
-         <div class="work-single--project-brief">
-             <h4>Overview —</h4>
+         <div class="work-single--project-brief" data-sr>
              <p><?php the_field('overview'); ?></p>
-             <h4>Services —</h4>
-             <p><?php the_field('services'); ?></p>
+             <?php if( get_field('link') ): ?>
+             <p><a href="<?php the_field('link'); ?>"><?php the_field('link-title'); ?></a></p>
+             <?php endif; ?>
+
          </div>
        </div>
       </div>
   </div>
-
 
 
 
@@ -133,6 +134,28 @@ $thumb_url = $thumb_url_array[0];
                      <div class="full-width-content">
                             <?php the_sub_field("full-width-content-field"); ?>
                       </div>
+
+                       <?php elseif(get_row_layout() == "full-width-slider"): ?>
+                     <div class="full-width-content main-gallery" style="background:<?php the_field('slider_background'); ?>">
+
+                      <?php if( have_rows('slider') ): ?>
+                        <?php while ( have_rows('slider') ) : the_row();?>
+
+                          <div class="gallery-cell" style="background: url('<?php the_sub_field('slider_image'); ?>'); width: <?php the_field('slider_cell_width'); ?>;">
+                          </div>
+                          <?php endwhile;?>
+                          <?php else :?>
+                          // no rows found
+                          <?php endif;?>
+
+
+
+
+
+
+
+
+                      </div>
                 <?php endif; ?>
 
 
@@ -142,6 +165,6 @@ $thumb_url = $thumb_url_array[0];
   <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; wp_reset_query(); ?>
 
-</div>
+
 
 <?php get_footer(); ?>

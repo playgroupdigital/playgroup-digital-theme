@@ -1,9 +1,23 @@
 // Max width for container fluid
-$max-width: 1470px;
+$max-width:                1470px;
 
 //colours
-$brand-grey:             #42484D;
-$dark-blue-grey: #1b1b26;
+$brand-primary-75:         hsb(240, 100, 93, 0.75);
+$brand-primary-50:         hsb(240, 100, 93, 0.5);
+$brand-primary-25:         hsb(240, 100, 93, 0.25);
+$brand-grey:               hsb(207, 14, 30, 1);
+$dark-blue-grey:           hsb(240, 29, 15, 1);
+$light-blue-grey:          hsb(240, 4, 60, 1);
+$light-blue-grey-75:       hsb(240, 4, 60, 0.75);
+$light-blue-grey-50:       hsb(240, 4, 60, 0.5);
+$light-blue-grey-25:       hsb(240, 4, 60, 0.25);
+$light-blue-grey-15:       hsb(240, 4, 60, 0.15);
+
+
+
+$brand-tetrad-one:         hsb(330, 100, 93, 1);
+$brand-tetrad-two:         hsb(60, 100, 93, 1);
+$brand-tetrad-three:       hsb(150, 100, 93, 1);
 
 
 

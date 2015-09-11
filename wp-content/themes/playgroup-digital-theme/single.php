@@ -15,7 +15,7 @@ $thumb_url = $thumb_url_array[0];
 <div class="blog-single--featured" style="background: url('<?php echo $thumb_url ?>');"></div>
 <div class="container">
 	<div class="blog-single">
-		<div class="blog-single--heading" >
+		<div class="blog-single--heading" data-sr>
 			<h1><?php the_title(); ?></h1>
 			<div class="blog-single--meta">
 				<p>Written by: <?php the_author_posts_link() ?></p>
@@ -26,7 +26,7 @@ $thumb_url = $thumb_url_array[0];
 				<p class="hidden-xs">Date: <a href="<?php echo get_day_link('', '', ''); ?>"><?php echo get_the_date(); ?></a></p>
 			</div>
 		</div>
-		<div class="blog-single--content">
+		<div class="blog-single--content" data-sr="vFactor 0.01">
 			<?php the_content(); ?>
 		</div>
 		<?php endwhile; else : ?>
@@ -40,12 +40,12 @@ $thumb_url = $thumb_url_array[0];
 <div class="blog-navigation">
 	<div class="container">
 		<div class="block-section ">
-			<div class="blog-navigation--links link-left ">
+			<div class="blog-navigation--links link-left " data-sr="enter right">
 				<p>
 					<?php next_post_link('%link', 'Previous Post'); ?>
 				</p>
 			</div>
-			<div class="blog-navigation--links link-right text-right">
+			<div class="blog-navigation--links link-right text-right" data-sr="enter left">
 				<p>
 					<?php previous_post_link('%link', 'Next Post'); ?>
 				</p>

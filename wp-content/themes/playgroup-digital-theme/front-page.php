@@ -46,6 +46,7 @@ get_header(); ?>
         $num_posts = 3;
           $args = array(
               'post_type' => 'work',
+              'category_name' => '',
               'posts_per_page' => $num_posts
             );
           $query = new WP_Query( $args );
@@ -63,7 +64,8 @@ get_header(); ?>
             <div class="work-home--image" style="background: url('<?php echo $thumb_url ?>');">
             </div>
           </div>
-          <div class="work-home--content ">
+          <div class="work-home--content">
+          <div class="client--wrapper"><div class="work-home--client"><p><?php the_field('client-name');  ?></p></div></div>
             <div class="work-home--text">
               <div class="work-home--text--inner">
                 <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?> </a></h2>

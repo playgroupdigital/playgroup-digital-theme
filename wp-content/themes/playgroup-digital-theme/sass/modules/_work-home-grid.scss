@@ -31,7 +31,7 @@
 .work-home--text {
   @include make-row();
    transform: translateZ(0);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in-out;
   background:transparent;
 
    @media screen and (max-width: $screen-sm-min) {
@@ -39,11 +39,18 @@
    }
   @media screen and (min-width: $screen-sm-min) {
     position: absolute;
-    top:50%;
-    transform: translateY(-50%);
+    bottom:2.5%;
     opacity: 0;
     color: $white
   }
+}
+
+.work-home:hover .work-home--text {
+  opacity: 1;
+  @media screen and (min-width: $screen-sm-min) {
+  transform: translateZ(0);
+  bottom:7.5%;
+}
 }
 .work-home:hover .work-home--image{
   @media screen and (min-width: $screen-sm-min) {
@@ -56,9 +63,7 @@
 }
 
 
-.work-home:hover .work-home--text {
-  opacity: 1;
-}
+
 
 .work-home--text  h2{
     color:  $gray-dark;
@@ -83,4 +88,19 @@
     @include link-underline-base(transparent , $white);
     @include link-underline-position($font-size-h4);
   }
+}
+
+.client--wrapper {
+@include make-row();
+}
+.work-home--client {
+  @include make-xs-column(18);
+color: $white;
+display: none;
+@media screen and (min-width: $screen-sm-min) {
+  display: block;
+position: absolute;
+
+top:10%;
+}
 }

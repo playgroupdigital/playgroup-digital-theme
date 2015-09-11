@@ -5,8 +5,8 @@ get_header(); ?>
 
     <!-- /container -->
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <div class="about-header">
-    <div class="about-header--mask" style="background: <?php the_field('blog-colour'); ?>;">
+  <div class="about-header" >
+    <div class="about-header--mask" style="background: <?php the_field('blog-colour'); ?>;" data-sr="enter fade">
         <?php
             $thumb_id = get_post_thumbnail_id();
             $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -61,7 +61,7 @@ get_header(); ?>
 
     <div class="col-xs-14 col-xs-push-2 about-banner--text">
       <p data-sr>Great things happen when we work together</p>
-      <a class="btn btn-primary about-banner--btn " href="about.html" role="button" data-sr>View case studies</a>
+      <span data-sr><a class="btn btn-primary about-banner--btn" href="about.html" role="button" data-sr="" >View case studies</a></span>
     </div>
     </div>
   </section>
@@ -103,7 +103,7 @@ get_header(); ?>
 
   <section class="about-section" >
    <div class="about-section--people" >
-    <div class="people-title"><h5>People</h5></div>
+    <div class="people-title" data-sr><h5>People</h5></div>
     <div class="about-people--items">
       <div class="people">
 
@@ -138,45 +138,31 @@ get_header(); ?>
 <section class="container-fluid about-section--dark">
 <div class="container">
    <div class="row about-section--clients">
-    <div class="col-xs-18 col-sm-6 clients-title"><h5>Clients</h5></div>
-    <div class="col-xs-18 col-sm-12 clients-logos">
-      <div class="row">
-        <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0006_unilever.png');"></div>
+    <div class="clients-title" data-sr><h5>Clients</h5></div>
+    <div class="clients-logos">
+      <div class="clients-row">
+      <?php
+    $args = array(
+    'post_type' => 'client'
+    );
+    $query = new WP_Query( $args );
+    ?>
+    <?php if( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+        <div class="client-logo-wrap" >
+           <img src="<?php the_field('client_logo'); ?>" alt="" class="img-responsive" data-sr>
         </div>
-        <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0034_Adnams.png');"></div>
-        </div>
-        <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0004_vivo.png');"></div>
-        </div>
-        <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/04/0000s_0032_bbc.png');"></div>
-        </div>
-        <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0025_Kings-Cross.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0010_smith.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0025_Kings-Cross.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0010_smith.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0006_unilever.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0001_WSPA.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/04/0000s_0032_bbc.png');"></div>
-        </div>
-         <div class="col-xs-9 col-sm-6 col-md-3">
-           <div class="client-section--logo" style="background: url('http://playgroup.com/wp-content/uploads/2013/07/0000s_0010_smith.png');"></div>
-        </div>
+            <?php endwhile; else : ?>
+    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <?php endif; wp_reset_query(); ?>
+
+
+
+
+
+
+
+
+
       </div>
     </div>
 

@@ -13,8 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
-
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 <?php wp_head(); ?>
     <style>
       [data-sr] {
@@ -24,6 +23,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="body-wrap">
 <div class="container-fluid nav-wrap  navbar-fixed">
 
     <div class="contact">
@@ -51,7 +51,7 @@
 
 
  <!-- Navbar -->
-<div class="header-nav">
+<div class="header-nav" >
       <div class="header-nav--row">
         <nav class="navbar navbar-default ">
           <div class="navbar-header">
@@ -77,6 +77,7 @@
             </div><!--/.nav-collapse -->
           </nav>
         </div>
-      </div></div>
+      </div>
+    </div>
       <!-- /Navbar -->
 

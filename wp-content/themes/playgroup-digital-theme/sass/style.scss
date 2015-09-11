@@ -11,12 +11,15 @@ Text Domain: playgroup-digital-theme
 */
 
 // Import Variables
+@import "base/functions";
 @import "base/variables";
 @import "base/mixins";
+@import "base/animations";
 
 // Import Bootstrap for Sass
 @import "vendor/bootstrap";
 @import "vendor/animate";
+@import "vendor/flickity";
 
 // Import Grid Css
 @import "layout/grid";
@@ -26,18 +29,24 @@ Text Domain: playgroup-digital-theme
 
 * {
   backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 html {
-  overflow-y: scroll;
+  //overflow-y: scroll;
 
 }
 body{
   overflow-x: hidden;
 }
 
-[data-sr] {
-        visibility: hidden;
+
+
+.body-wrap {
+  @extend .container-fluid;
+   background: $white;
 }
+
 .container {
  background: $white;
 }

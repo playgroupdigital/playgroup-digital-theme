@@ -2,6 +2,10 @@
     @extend .container;
     transition: all 0.5s ease-in-out;
 
+    @media screen and (min-width: $screen-sm-min) {
+    margin-top: 100px;
+    }
+
 }
 
 .home-header--row {
@@ -25,7 +29,7 @@
 
 
 .home-header--text {
-  @include make-xs-column(15);
+  @include make-xs-column(16);
   @include make-sm-column(14);
   @include make-sm-column(11);
   transition: all 0.5s ease-in-out;
@@ -33,7 +37,7 @@
    padding-top: 10vh;
    @media screen and (min-width: $screen-sm-min) {
     padding-top: 20%;
-    padding-top: 43vh;
+    padding-top: 25vh;
     }
 }
 

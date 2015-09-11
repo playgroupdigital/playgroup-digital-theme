@@ -1,7 +1,11 @@
 .about-header {
     @extend .container-fluid;
-    background: $brand-primary;
+    background: $white;
     position: relative;
+
+    @media screen and (min-width: $screen-sm-min) {
+margin-top: 100px;
+    }
 }
 
 .about-header--image {
@@ -9,15 +13,15 @@
     background-size: cover !important;
     opacity: 0.25;
     @include greyscale;
-    padding-bottom: 80%;
-    padding-bottom: 55vh;
+    padding-bottom: 100%;
+    padding-bottom: 70vh;
     @media screen and (min-width: $screen-sm-min) {
-    padding-bottom: 50%;
-    padding-bottom: 65vh;
+    padding-bottom: 60%;
+    padding-bottom: 50vh;
     }
     @media screen and (min-width: $screen-md-min) {
-    padding-bottom: 45%;
-    padding-bottom: 75vh;
+    padding-bottom: 35%;
+    padding-bottom: 50vh;
     }
 }
 
@@ -62,6 +66,7 @@
 
 .about-section {
   @extend .container;
+
     //background:$white;
     padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
@@ -90,7 +95,7 @@
 
 }
 .about-section .two-col-text+.two-col-text {
-    border-top: 1px solid $gray-light-border;
+      border-top: 1px solid $light-blue-grey-15;
 }
 
 .two-col-text--heading {
@@ -131,7 +136,7 @@
 .about-banner--image {
     background-position: center !important;
     background-size: cover !important;
-    padding-bottom: 100%;
+    padding-bottom: 120%;
     @media screen and (min-width: $screen-sm-min) {
     padding-bottom: 40%;
     }
@@ -197,6 +202,7 @@
   @include make-row();
     padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
+      border-bottom: 1px solid $light-blue-grey-15;
     @media screen and (min-width: $screen-sm-min) {
         padding-top: ($grid-gutter-width * 6);
         padding-bottom:($grid-gutter-width * 6);
@@ -206,23 +212,27 @@
 .capabilities-title {
    @include make-xs-column(18);
   @include make-sm-column(4);
-  @include make-md-column(3);
+  @include make-md-column(4);
     @media screen and (max-width: $screen-sm-min) {
         padding-bottom: ($grid-gutter-width * 6);
   }
+}
+
+
+.capabilities-items--row {
+  @include make-row();
+        margin-left: - ($grid-gutter-width / 2);
+      margin-right: - ($grid-gutter-width / 2);
+  //margin-left: - ($grid-gutter-width / 2);
 }
 
 .capabilities-items {
   @include make-xs-column(18);
   @include make-sm-column(13);
   @include make-md-column(14);
-  @include make-sm-column-offset(1);
+
 }
 
-.capabilities-items--row {
-  @include make-row();
-  margin-left: - ($grid-gutter-width / 2);
-}
 
 .capabilities-text {
   @include make-xs-column(18);
@@ -315,8 +325,8 @@ color: $brand-primary;
     //padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
     @media screen and (min-width: $screen-sm-min) {
-        padding-top: ($grid-gutter-width * 6);
-        padding-bottom:($grid-gutter-width * 6);
+        padding-top: ($grid-gutter-width * 3);
+        padding-bottom:($grid-gutter-width * 3);
   }
 
 }
@@ -330,11 +340,19 @@ color: $brand-primary;
 .people-title {
    @include make-xs-column(18);
   @include make-sm-column(4);
-  @include make-md-column(3);
+
 
     @media screen and (max-width: $screen-sm-min) {
         padding-bottom: ($grid-gutter-width * 3);
   }
+}
+
+
+.about-people--items {
+  @include make-xs-column(18);
+  @include make-sm-column(14);
+
+
 }
 
 .people-profile {
@@ -348,12 +366,6 @@ color: $brand-primary;
 
 }
 
-.about-people--items {
-  @include make-xs-column(18);
-  @include make-sm-column(13);
-  @include make-md-column(14);
-  @include make-sm-column-offset(1);
-}
 
 
 
@@ -380,7 +392,7 @@ color: $brand-primary;
 
 
 .about-section--dark {
-    background:$dark-blue-grey;
+    background:$light-blue-grey-15;
     padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
     @media screen and (min-width: $screen-sm-min) {
@@ -389,34 +401,49 @@ color: $brand-primary;
 
 .about-section--dark h5{
         margin-top: 0;
-        color: $white;
+        //color: $white;
         font-family: $font-family-sans-serif-demi;
 }
 
 .about-section--clients {
     padding-top: ($grid-gutter-width * 3);
     padding-bottom:($grid-gutter-width * 3);
-    margin-left: 0;
-    margin-right: 0;
+
     @media screen and (min-width: $screen-sm-min) {
         padding-top: ($grid-gutter-width * 6);
-        padding-bottom:($grid-gutter-width * 0);
+        padding-bottom:($grid-gutter-width * 1.5);
   }
 
+}
+
+.clients-title {
+  @include make-xs-column(18);
+  @include make-sm-column(3);
+  transition: all 0.2s;
+  opacity: 0.85;
 }
 
 .clients-logos {
+  @include make-xs-column(18);
+  @include make-sm-column(15);
     @media screen and (max-width: ($screen-sm-min - 1px) ) {
        padding-top: ($grid-gutter-width * 4.5);
   }
+}
+
+.clients-row {
+  @include make-row();
 
 }
 
-.client-section--logo {
-    background-position: bottom !important;
-    background-size: cover !important;
-    padding-bottom: 100%;
-    -webkit-filter: brightness(160%);
-    //border: 1px solid white;
-    margin-bottom:($grid-gutter-width * 1.5);
+.client-logo-wrap {
+  @include make-xs-column(9);
+  @include make-sm-column(6);
+  @include make-md-column(3);
+   opacity: 0.5;
+   padding-bottom:($grid-gutter-width * 4.5);
+  @media screen and (min-width: ($screen-lg-min)) {
+  padding-right: 50px;
+}
+
 }

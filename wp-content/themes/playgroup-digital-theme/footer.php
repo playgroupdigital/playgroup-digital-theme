@@ -10,9 +10,9 @@
 ?>
 
 <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-text" data-sr>
-        <div class=" footer-text--address">
+      <div class="footer-container" data-sr>
+        <div class="footer-text">
+        <div class=" footer-text--address" >
           <?php dynamic_sidebar( 'footer-address' ); ?>
         </div>
         <div class="footer-text--form mailchimp-form">
@@ -35,7 +35,7 @@
             </form>
           </div>
         </div>
-        <div class="footer-text" data-sr>
+        <div class="footer-text">
           <div class="footer-text--copyright">
             <p>&copy;  Playgroupdigital <?php echo date("Y") ?> </p>
           </div>
@@ -47,7 +47,7 @@
       <div class="container" >
         <div class="row ">
           <div class="sub-footer--logo sub-footer--link" >
-            <img src="http://localhost/playgroup-digital-theme/wp-content/uploads/2015/08/playgroup-logo.svg" alt="" width="26" height="26" data-sr>
+            <img src="http://playgroupdigital.com/wp-content/uploads/2015/08/playgroup-logo.svg" alt="" width="26" height="26">
             <p class="text-right pull-right" data-sr>Part of <a href="http://playgroup.com">Playgroup</a></p>
           </div>
         </div>
@@ -59,6 +59,6 @@
 
 
 
-
+</div>
 </body>
 </html>

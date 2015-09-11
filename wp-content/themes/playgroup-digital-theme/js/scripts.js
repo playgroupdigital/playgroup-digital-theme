@@ -17,7 +17,11 @@ $(document).ready(function() {
         $(this).toggleClass("active");
     });
 
+
+
      svgeezy.init(false, 'png');
+
+
 });
 
 
@@ -25,7 +29,7 @@ $(document).ready(function() {
 var container = $('.container').offset().top;
     $(document).on("scroll", function(){
     if
-      ($(document).scrollTop() > container - 100){
+      ($(document).scrollTop() > container - 70){
       $(".navbar").addClass("shrink");
       $(".nav-wrap").addClass("nav-bg");
       $(".header-nav").addClass("nav-bg");
@@ -45,17 +49,33 @@ var config = {
         over:     '1s',
         wait:     '0s',
         easing: 'ease',
-        mobile: 'false',
+        mobile: false,
         scale:    { direction: 'up', power: '0%' },
         rotate:   { x: 0, y: 0, z: 0 },
         opacity:  0,
         reset:  false,
         delay:  'onload',
-        vFactor: 0.15
+        vFactor: '0.15'
        }
 
 $(document).ready(function() {
       window.sr = new scrollReveal( config );
   });
 
+$(document).ready(function() {
+$('.main-gallery').flickity({
+  // options
+  cellAlign: 'center',
+  contain: 'true',
+  imagesLoaded: 'true',
+  wrapAround: 'true',
+  percentPosition: 'false',
+  arrowShape: {
+  x0: 0,
+  x1: 50, y1: 50,
+  x2: 55, y2: 50,
+  x3: 5
+}
+});
+  });
 
