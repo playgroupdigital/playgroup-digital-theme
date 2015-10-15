@@ -49,10 +49,10 @@ var config = {
         over:     '1s',
         wait:     '0s',
         easing: 'ease',
-        mobile: false,
         scale:    { direction: 'up', power: '0%' },
         rotate:   { x: 0, y: 0, z: 0 },
         opacity:  0,
+        mobile: false,
         reset:  false,
         delay:  'onload',
         vFactor: '0.15'

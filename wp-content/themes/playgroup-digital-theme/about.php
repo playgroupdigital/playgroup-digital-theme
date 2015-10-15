@@ -61,7 +61,7 @@ get_header(); ?>
 
     <div class="col-xs-14 col-xs-push-2 about-banner--text">
       <p data-sr>Great things happen when we work together</p>
-      <span data-sr><a class="btn btn-primary about-banner--btn" href="about.html" role="button" data-sr="" >View case studies</a></span>
+      <span><a class="btn btn-primary about-banner--btn" href="http://playgroupdigital.com/work" role="button" >View case studies</a></span>
     </div>
     </div>
   </section>
